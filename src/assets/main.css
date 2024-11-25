@@ -5,6 +5,7 @@
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
+  background-color: black;
 }
 
 a,
@@ -23,6 +24,7 @@ a,
 
 @media (min-width: 1024px) {
   body {
+    background-color:darkolivegreen;
     display: flex;
     place-items: center;
   }

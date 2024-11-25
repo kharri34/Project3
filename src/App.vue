@@ -1,57 +1,31 @@
-<script>
-  export default {
-    name: "App",
-  }
-</script>
-
 <template>
-  <div>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-      </ul>
-    </nav>
-  </div>
+    <div id="app">
+        <nav>
+            <router-link to="/">Home</router-link>
+            <router-link to="/workoutlibrary">Workout Library</router-link>
+        </nav>
+        <router-view></router-view>
+    </div>
 </template>
 
-<style>
-  nav {
-    padding: 1rem;
-  }
-  nav ul {
-    list-style-type: none;
+<style scoped>
+nav {
+    padding: 10px;
     display: flex;
-    gap: 1rem;
-  }
-  nav a {
-    color: #333;
+    gap: 15px;
+    justify-content: left;
+    border-bottom: 1px solid #ddd;
+}
+
+nav a {
+    text-decoration: none;
+    color: grey;
     font-weight: bold;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-  }
-  nav a:hover {
+}
+
+nav a:hover {
     text-decoration: underline;
-    color:ghostwhite;
-    background-color: darkslategray;
-  }
+    color: goldenrod;
+    background-color: white;
+}
 </style>
-
-<!--
-comment
-Scipt
-export default {
-  data(32:19) {
-    return {
-      name: 'Katie Harrington',
-      status: 'pending',
-      tasks: ['Task One,']
-    };
-  },
-};
-template
-  <h1>{{ name }}</h1>
-  <p v-if="status === 'active'">User is active</p>
-  <p v-else-if="status === 'pending'">User is pending</p>
-  <p v-else>User is inactive</p>
-</comment>
-
--->
