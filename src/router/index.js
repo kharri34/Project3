@@ -1,29 +1,110 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../components/Home.vue';
-import WorkoutLibrary from '../components/WorkoutLibrary.vue';
-import Core from "../components/categories/Core.vue";
-import Aerobics from "../components/categories/Aerobics.vue";
-import Arms from "../components/categories/Arms.vue";
-import Back from "../components/categories/Back.vue";
-import Chest from "../components/categories/Chest.vue";
-import Fullbody from "../components/categories/Fullbody.vue";
-import Legs from "../components/categories/Legs.vue";
-import Shoulders from "../components/categories/Shoulders.vue";
-import Stretches from "../components/categories/Stretches.vue";
+import Home from "../components/Home.vue";
+import WorkoutLibrary from "../components/WorkoutLibrary.vue";
+import Category from '@/components/Category.vue';
 
 const routes = [
-    { path: '/', name: 'Home', component: Home },
-    { path: '/workoutlibrary', name: 'WorkoutLibrary', component:WorkoutLibrary },
-    { path: "/core", name: "Core", component: Core },
-    { path: "/aerobics", name: "Aerobics", component: Aerobics },
-    { path: "/back", name: "Back", component: Back },
-    { path: "/arms", name: "Arms", component: Arms },
-    { path: "/chest", name: "Chest", component: Chest },
-    { path: "/fullbody", name: "Fullbody", component: Fullbody},
-    { path: "/legs", name: "Legs", component: Legs },
-    { path: "/shoulders", name: "Shoulders", component: Shoulders },
-    { path: "/shoulders", name: "Shoulders", component: Shoulders },
-    { path: "/stretches", name: "Stretches", component: Stretches },
+    { path: "/", name: "Home", component: Home},
+    { path: "/workoutlibrary", name: "WorkoutLibrary", component: WorkoutLibrary},
+    {
+        path: '/aerobics',
+        component: Category,
+        props: {
+            category: 'Aerobics',
+            workouts: [
+                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
+                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
+            ],
+        },
+    },
+    {
+        path: '/arms',
+        component: Category,
+        props: {
+            category: 'Arms',
+            workouts: [
+                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
+                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
+            ],
+        },
+    },
+    {
+        path: '/back',
+        component: Category,
+        props: {
+            category: 'Back',
+            workouts: [
+                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
+                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
+            ],
+        },
+    },
+    {
+        path: '/chest',
+        component: Category,
+        props: {
+            category: 'Chest',
+            workouts: [
+                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
+                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
+            ],
+        },
+    },
+    {
+        path: '/core',
+        component: Category,
+        props: {
+            category: 'Core',
+            workouts: [
+                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
+                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
+            ],
+        },
+    },
+    {
+        path: '/legs',
+        component: Category,
+        props: {
+            category: 'Legs',
+            workouts: [
+                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
+                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
+            ],
+        },
+    },
+    {
+        path: '/shoulders',
+        component: Category,
+        props: {
+            category: 'Shoulders',
+            workouts: [
+                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
+                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
+            ],
+        },
+    },
+    {
+        path: '/stretches',
+        component: Category,
+        props: {
+            category: 'Stretches',
+            workouts: [
+                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
+                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
+            ],
+        },
+    },
+    {
+        path: '/fullbody',
+        component: Category,
+        props: {
+            category: 'FullBody',
+            workouts: [
+                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
+                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
+            ],
+        },
+    },
 ];
 
 const router = createRouter({
