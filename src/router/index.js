@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from "../components/Home.vue";
 import WorkoutLibrary from "../components/WorkoutLibrary.vue";
-import Category from '@/components/Category.vue';
+import Category from '../components/Category.vue';
 
 const routes = [
     { path: "/", name: "Home", component: Home},

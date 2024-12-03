@@ -1,7 +1,6 @@
 <template>
     <div class="svg-wrapper">
       <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
-        <!-- Define the gradient -->
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" style="stop-color:rgb(228, 213, 171); stop-opacity:1" />
