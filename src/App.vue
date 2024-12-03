@@ -3,6 +3,8 @@
         <nav>
             <router-link to="/">Home</router-link>
             <router-link to="/workoutlibrary">Workout Library</router-link>
+            <router-link to="/Exerices">Premade Workout</router-link>
+            <router-link to="/Timer">Timer</router-link>
         </nav>
         <router-view></router-view>
     </div>
