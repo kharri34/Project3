@@ -18,7 +18,7 @@ html, body{
   justify-content: center;
   height: 100%;
   width: 100%;
-  background-color: #1f211e;
+  background-color: var(--color-background);
   color: var(--color-text);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: bold;

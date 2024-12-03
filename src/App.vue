@@ -25,8 +25,8 @@ export default{
 }
 
 nav {
-  display:flex;
- 
+  display: flex;
+  justify-content: space-around;
   padding: 1rem;
   color: #fff;
   border-bottom: 1px solid #ddd;
