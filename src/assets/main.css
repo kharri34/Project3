@@ -5,7 +5,7 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: var(--color-background); 
+  background-color: #1f211e; 
 }
 
 #app {
@@ -14,7 +14,7 @@ html, body {
   display: flex;
   flex-direction: column;
   padding: 0;
-  background-color: var(--color-background);
+  background-color: #1f211e;
   color:var(--color-text);
   padding: 0;
 }
