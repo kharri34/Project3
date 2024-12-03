@@ -6,28 +6,48 @@
             <router-link to="/Exerices">Premade Workout</router-link>
             <router-link to="/Timer">Timer</router-link>
         </nav>
-        <router-view></router-view>
+        <div style="flex:1; display: flex; flex-direction: column;">
+            <router-view />
+        </div>
     </div>
 </template>
 
-<style scoped>
-nav {
-    padding: 10px;
+<script>
+export default{
+    name: 'App'
+}
+</script>
+
+<style>
+#app {
     display: flex;
-    gap: 15px;
-    justify-content: left;
-    border-bottom: 1px solid #ddd;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+nav {
+  display:flex;
+ 
+  padding: 1rem;
+  color: #fff;
+  border-bottom: 1px solid #ddd;
 }
 
 nav a {
-    text-decoration: none;
-    color: grey;
-    font-weight: bold;
+  text-decoration: none;
+  color: grey;
+  font-weight: bold;
 }
 
 nav a:hover {
-    text-decoration: underline;
-    color: goldenrod;
-    background-color: white;
+  text-decoration: underline;
+  color: goldenrod;
+  background-color: white;
+}
+
+#app > div {
+    flex-grow:1;
 }
 </style>
+  
