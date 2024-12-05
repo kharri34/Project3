@@ -3,110 +3,39 @@ import Home from "../components/Home.vue";
 import WorkoutLibrary from "../components/WorkoutLibrary.vue";
 import Category from '../components/Category.vue';
 import Timer from '../components/Timer.vue';
-
+import Workout from '../components/Workout.vue';
 
 const routes = [
-    { path: "/", name: "Home", component: Home},
-    { path: "/workoutlibrary", name: "WorkoutLibrary", component: WorkoutLibrary},
-    { path: "/timer-app", name: "Timer", component: Timer},
+    { path: "/", name: "Home", component: Home },
+    { path: "/workoutlibrary", name: "WorkoutLibrary", component: WorkoutLibrary },
+    { path: "/timer-app", name: "Timer", component: Timer },
+
     {
-        path: '/aerobics',
+        path: '/:category',
+        name: 'Category',
         component: Category,
-        props: {
-            category: 'Aerobics',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
+        props: route => {
+            const category = route.params.category.toLowerCase();
+            const workoutLinks = [
+                { id: 1, name: 'Beginner', path: `/${category}/beginner` },
+                { id: 2, name: 'Intermediate', path: `/${category}/intermediate` },
+                { id: 3, name: 'Advanced', path: `/${category}/advanced` },
+            ];
+            return {
+                category: category.charAt(0).toUpperCase() + category.slice(1),
+                workouts: workoutLinks,
+            };
         },
     },
+
     {
-        path: '/arms',
-        component: Category,
-        props: {
-            category: 'Arms',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
-    },
-    {
-        path: '/back',
-        component: Category,
-        props: {
-            category: 'Back',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
-    },
-    {
-        path: '/chest',
-        component: Category,
-        props: {
-            category: 'Chest',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
-    },
-    {
-        path: '/core',
-        component: Category,
-        props: {
-            category: 'Core',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
-    },
-    {
-        path: '/legs',
-        component: Category,
-        props: {
-            category: 'Legs',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
-    },
-    {
-        path: '/shoulders',
-        component: Category,
-        props: {
-            category: 'Shoulders',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
-    },
-    {
-        path: '/stretches',
-        component: Category,
-        props: {
-            category: 'Stretches',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
-    },
-    {
-        path: '/fullbody',
-        component: Category,
-        props: {
-            category: 'FullBody',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
+        path: '/:category/:level',
+        name: 'Workout',
+        component: Workout,
+        props: route => ({
+            category: route.params.category.charAt(0).toUpperCase() + route.params.category.slice(1),
+            level: route.params.level.charAt(0).toUpperCase() + route.params.level.slice(1),
+        }),
     },
 ];
 

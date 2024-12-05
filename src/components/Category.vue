@@ -1,44 +1,57 @@
 <template>
-    <div class="category-page">
-        <section class="wrapper">
-            <div class="top">{{ category }}</div>
-            <div class="bottom" aria-hidden="true">{{ category }}</div>
-        </section>
-        <ul>
-            <li v-for="workout in workouts" :key="workout.id">
-                <h2> {{ workout.name }}</h2>
-                <p> {{ workout.description }}</p>
-            </li>
-        </ul>
+    <div class="category">
+      <section class="wrapper">
+        <div class="top">{{ category }}</div>
+        <div class="bottom" aria-hidden="true">{{ category }}</div>
+      </section>
+      <div class="list">
+        <li v-for="workout in workouts" :key="workout.id">
+            <router-link :to="workout.path">
+                <SvgButton2 :text="workout.name"/>
+            </router-link>
+        </li>
+      </div>
     </div>
-</template>
-
-<script>
-export default {
+  </template>
+  
+  <script>
+  import SvgButton2 from "@/components/SvgButton2.vue";
+  
+  export default {
     props: {
-        category: {
-            type: String,
-            required: true,
-        },
-        workouts: {
-            type: Array,
-            required: true,
-        },
-    }
-};
-</script>
-
-<style scoped>
-.category-page {
+      category: {
+        type: String,
+        required: true,
+      },
+      workouts: {
+        type: Array,
+        required: true,
+      },
+    },
+    components: {
+      SvgButton2,
+    },
+  };
+  </script>
+  
+  <style scoped>
+  .category {
     background-color: black;
-}
-
-* {
+  }
+  
+  .router {
+    color: white;
+    list-style: none;
+    text-decoration: none;
+    margin-top: 100px;
+    margin: 20px 0;
+  }
+  
+  * {
     box-sizing: border-box;
-}
-
-.wrapper {
-    position:relative;
+  }
+  
+  .wrapper {
     height: auto;
     padding: 20px;
     font-family: "Oswald", sans-serif;
@@ -46,38 +59,37 @@ export default {
     font-weight: 700;
     text-transform: uppercase;
     color: hsl(0, 0%, 100%);
-}
-
-.wrapper > div {
+  }
+  
+  .wrapper > div {
     position: absolute;
-    width:100%;
+    width: 100%;
     text-align: center;
-}
-
-.top {
+  }
+  
+  .top {
     clip-path: polygon(-20% 100%, 100% 0%, 0% 0%, 0% 100%);
-}
-
-.bottom {
+  }
+  
+  .bottom {
     clip-path: polygon(-15% 100%, 100% 5%, 100% 100%, 0% 100%);
     color: transparent;
     background: linear-gradient(176deg, black 47%, hsl(0, 0%, 100%) 60%);
     background-clip: text;
     -webkit-background-clip: text;
     transform: translateX(-0.02em);
-}
-
-ul {
+  }
+  
+  .list {
     list-style: none;
-    padding: 100px 0 0 0;
-    margin: 0;
-}
-
-li {
-    margin: 20px 0;
-    background:#2b3936;
+    margin-top: 100px;
+  }
+  
+  li {
+    background: transparent;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px, rgba(0, 0, 0, 0.1);
-}
-</style>
+  }
+  </style>
+  

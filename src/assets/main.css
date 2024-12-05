@@ -24,6 +24,11 @@ html, body {
   --color-background:var(--vt-c-default-background);
 }
 
+
+li {
+  color: white;
+}
+
 @media (min-width: 1024px) {
   body {
     display: flex;

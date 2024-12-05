@@ -66,6 +66,7 @@ nav a:hover {
     background-image: url('@/assets/green.jpg');
     background-size: cover;
     background-position: center;
+    --link-gradient: linear-gradient(0.25turn, #f3d098, #b6915d, #a77e4a);
 }
 
 .background-workout {
@@ -73,10 +74,12 @@ nav a:hover {
     background-image: url('@/assets/green2.jpg');
     background-size: cover;
     background-position: center;
+    --link-gradient: linear-gradient(0.25turn, #ffd054, #fce1a4, #b28031, #895724, #6e3c1b);
 }
 
 .background-category {
     --color-background: var(--vt-c-category-background);
+    --link-gradient: linear-gradient(0.25turn, #ffffff, #c0c0c0, #808080, #606060, #505050);
 }
 
 .background-default {
@@ -140,6 +143,6 @@ nav a:hover {
 .box.bar:hover::after {
   -webkit-transform: scale(1);
   border-color: transparent;
-  border-image: linear-gradient(0.25turn, #ffd054,#fce1a4, #b28031, #895724, #6e3c1b) 1;
+  border-image: var(--link-gradient) 1;
 }
 </style>
