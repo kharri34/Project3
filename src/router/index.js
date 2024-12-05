@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from "../components/Home.vue";
 import WorkoutLibrary from "../components/WorkoutLibrary.vue";
 import Category from '../components/Category.vue';
+<<<<<<< HEAD
 import Timer from '../components/Timer.vue';
 import Workout from '../components/Workout.vue';
 
@@ -10,6 +11,15 @@ const routes = [
     { path: "/workoutlibrary", name: "WorkoutLibrary", component: WorkoutLibrary },
     { path: "/timer-app", name: "Timer", component: Timer },
 
+=======
+import Timer from '@/components/Timer.vue';
+
+
+const routes = [
+    { path: "/", name: "Home", component: Home},
+    { path: "/workoutlibrary", name: "WorkoutLibrary", component: WorkoutLibrary},
+    { path: "/timer", name: "Timer", component: Timer},
+>>>>>>> 0a0bf2e6e6a4bf38911c1154cc2460fd2a9fbd5c
     {
         path: '/:category',
         name: 'Category',
