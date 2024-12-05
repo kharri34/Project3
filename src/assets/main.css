@@ -5,41 +5,27 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: #1f211e; 
 }
 
 #app {
+  background-color: var(--color-background);
   min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0;
-  background-color: #1f211e;
   color:var(--color-text);
-  padding: 0;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+.background-category{
+  --color-background:var(--vt-c-category-background);
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: #2b3936;
-  }
+.background-default {
+  --color-background:var(--vt-c-default-background);
 }
 
 @media (min-width: 1024px) {
   body {
     display: flex;
-  }
-
-  #app {
-    display: block;
-    padding: 2rem;
   }
 }

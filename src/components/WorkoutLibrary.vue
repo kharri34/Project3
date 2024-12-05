@@ -1,37 +1,20 @@
 <template>
   <div class="workoutlibrary">
-    <h1 class="shadow-text">Workout Library</h1>
-    <div class="categories">
-      <router-link to="/aerobics">
-        <SvgButton text="Aerobic Workouts" />
-      </router-link>
-      <router-link to="/arms">
-        <SvgButton text="Arm Workouts" />
-      </router-link>
-      <router-link to="/back">
-        <SvgButton text="Back Workouts" />
-      </router-link>
-      <router-link to="/chest">
-        <SvgButton text="Chest Workouts" />
-      </router-link>
-      <router-link to="/core">
-        <SvgButton text="Core Workouts" />
-      </router-link>
-      <router-link to="/fullbody">
-        <SvgButton text="Full-Body Workouts" />
-      </router-link>
-      <router-link to="/legs">
-        <SvgButton text="Leg Workouts" />
-      </router-link>
-      <router-link to="/shoulders">
-        <SvgButton text="Shoulder Workouts" />
-      </router-link>
-      <router-link to="/stretches">
-        <SvgButton text="Stretches" />
-      </router-link>
+    <h1 class="shadow-text underline">Workout Library</h1>
+    <div class="categories-grid">
+      <router-link class="div1" to="/aerobics"><SvgButton text="Aerobic Workouts" /></router-link>
+      <router-link class="div2" to="/chest"><SvgButton text="Chest Workouts" /></router-link>
+      <router-link class="div3" to="/legs"><SvgButton text="Leg Workouts" /></router-link>
+      <router-link class="div4" to="/arms"><SvgButton text="Arm Workouts" /></router-link>
+      <router-link class="div5" to="/core"><SvgButton text="Core Workouts" /></router-link>
+      <router-link class="div6" to="/shoulders"><SvgButton text="Shoulder Workouts" /></router-link>
+      <router-link class="div7" to="/back"><SvgButton text="Back Workouts" /></router-link>
+      <router-link class="div8" to="/fullbody"><SvgButton text="Full-Body Workouts" /></router-link>
+      <router-link class="div9" to="/stretches"><SvgButton text="Stretches" /></router-link>
     </div>
   </div>
 </template>
+
 
   
   <script>
@@ -42,95 +25,65 @@
     },
   };
   </script>
-  
-  <style scoped>
-  .workoutlibrary {
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #1f211e;
-    font-weight: bold;
-    height: 100vh;
-    width: 100%;
-  }
+<style scoped>
+.workoutlibrary {
   
-  h1 {
-    position: relative;
-    margin: 0;
-    padding: 10px;
-    font-size: 3rem;
-    text-transform: uppercase;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    border-bottom: 2px solid transparent;
-    border-image: linear-gradient(0.25turn, #e4d5ab, rgb(233, 210, 147), rgb(237, 204, 113), rgb(238, 192, 64), rgb(240, 179, 11));
-    border-image-slice: 1;
-  }
-  
-  .shadow-text {
-    color: #fff;
-    text-shadow: 
-      1px 1px 0 #000, 
-      2px 2px 0 #333, 
-      3px 3px 0 #666, 
-      4px 4px 0 #999; 
-  }
-  
-  .categories {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 80px;
-    justify-items: center;
-    flex-direction: column; 
-    padding: 40px;
-    width: 90%;
-    margin: 0 auto;
-  }
-  
-  .category-card {
-    position: relative;
-    display: flex;
-    width: 50rem;
-    height: 5rem;
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: 500;
-    text-transform: uppercase;
-    
-    color: #ccd3ca;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8),
-                 -2px -2px 4px rgba(0, 0, 0, 0.8);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 10px;
-    box-shadow: inset -3px -3px 5px rgba(255, 255, 255, 0.3),
-                inset 3px 3px 5px rgba(0, 0, 0, 0.4),
-                3px 3px 8px rgba(0, 0, 0, 0.6);
-    background-color:#161d1b;
-    
-    transition: transform 0.3s, box-shadow 0.3s;
-    margin-bottom: 20px;  
-  }
-  
-  .category-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-  }
-  
-  .category-card:focus {
-    box-shadow: 0 0 0 3px #7a8074;
-  }
-  
+h1 {
+  padding: 10px;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 
-  @media (max-width: 768px) {
-    .category-card {
-      height: 150px; 
-    }
-  }
+.underline::after {
+  content:'';
+  height:2px;
+  width:89%;
+  background:linear-gradient(0.25turn, #fdd87d,#fce1a4, #b28031, #895724, #6e3c1b);;
+  position:absolute;
+  right:6%;
+  bottom:0;
+}
+
+.shadow-text {
+  position: relative;
+  left: 110px;
+  color: #fff;
+  text-shadow: 
+    1px 1px 0 #6e3c1b, 
+    2px 2px 0 #895724, 
+    3px 3px 0 #b28031, 
+    4px 4px 0 #ffd054; 
+}
+
+.categories-grid {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 22px;
+  display: grid;
+  grid-template-columns: repeat(auto, 250px);
+  grid-template-rows: repeat(auto, 250px);
+  gap:auto;
+  margin-top: 10px;
+  grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 6 / 2 / 7; }
+.div2 { grid-area: 3 / 6 / 4 / 7; }
+.div3 { grid-area: 5 / 6 / 6 / 7; }
+.div4 { grid-area: 2 / 7 / 3 / 8; }
+.div5 { grid-area: 4 / 7 / 5 / 8; }
+.div6 { grid-area: 6 / 7 / 7 / 8; }
+.div7 { grid-area: 3 / 8 / 4 / 10; }
+.div8 { grid-area: 5 / 8 / 6 / 10; }
+.div9 { grid-area: 7 / 8 / 8 / 10; }
 </style>
-  
+
   
     
