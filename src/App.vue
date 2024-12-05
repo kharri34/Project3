@@ -3,6 +3,8 @@
         <nav :class="navClass">
                 <router-link to="/" class="box bar">Home</router-link>
                 <router-link to="/workoutlibrary" class="box bar">Workout Library</router-link>
+                <router-link to="/Timer" class="box bar">Timer</router-link>
+                
         </nav>
         <div style="flex:1; display: flex; flex-direction: column;">
             <router-view />

@@ -2,13 +2,13 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from "../components/Home.vue";
 import WorkoutLibrary from "../components/WorkoutLibrary.vue";
 import Category from '../components/Category.vue';
-import Timer from '../components/Timer.vue';
+import Timer from '@/components/Timer.vue';
 
 
 const routes = [
     { path: "/", name: "Home", component: Home},
     { path: "/workoutlibrary", name: "WorkoutLibrary", component: WorkoutLibrary},
-    { path: "/timer-app", name: "Timer", component: Timer},
+    { path: "/timer", name: "Timer", component: Timer},
     {
         path: '/aerobics',
         component: Category,
