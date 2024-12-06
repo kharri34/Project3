@@ -15,46 +15,36 @@ import Legs from '../components/categories/Legs.vue';
 import Shoulders from '../components/categories/Shoulders.vue';
 
 const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/workoutlibrary', name: 'WorkoutLibrary', component: WorkoutLibrary },
-  { path: '/timer', name: 'Timer', component: Timer },
-
-  // Static category routes
-  { path: '/core', name: 'Core', component: Core },
-  { path: '/aerobics', name: 'Aerobics', component: Aerobics },
-  { path: '/arms', name: 'Arms', component: Arms },
-  { path: '/back', name: 'Back', component: Back },
-  { path: '/chest', name: 'Chest', component: Chest },
-  { path: '/legs', name: 'Legs', component: Legs },
-  { path: '/shoulders', name: 'Shoulders', component: Shoulders },
-
-  // Dynamic category routes
-  {
-    path: '/:category',
-    name: 'Category',
-    component: Category,
-    props: route => {
-      const category = route.params.category.toLowerCase();
-      const workoutLinks = [
-        { id: 1, name: 'Beginner', path: `/${category}/beginner` },
-        { id: 2, name: 'Intermediate', path: `/${category}/intermediate` },
-        { id: 3, name: 'Advanced', path: `/${category}/advanced` },
-      ];
-      return {
-        category: category.charAt(0).toUpperCase() + category.slice(1),
-        workouts: workoutLinks,
-      };
+    { path: "/", name: "Home", component: Home },
+    { path: "/workoutlibrary", name: "WorkoutLibrary", component: WorkoutLibrary },
+    { path: "/timer", name: "Timer", component: Timer },
+    {
+        path: '/:category',
+        name: 'Category',
+        component: Category,
+        props: route => {
+            const category = route.params.category.toLowerCase();
+            const workoutLinks = [
+                { id: 1, name: 'Beginner', path: `/${category}/beginner` },
+                { id: 2, name: 'Intermediate', path: `/${category}/intermediate` },
+                { id: 3, name: 'Advanced', path: `/${category}/advanced` },
+            ];
+            return {
+                category: category.charAt(0).toUpperCase() + category.slice(1), 
+                workouts: workoutLinks,
+            };
+        },
     },
-  },
-  {
-    path: '/:category/:level',
-    name: 'Workout',
-    component: Workout,
-    props: route => ({
-      category: route.params.category.charAt(0).toUpperCase() + route.params.category.slice(1),
-      level: route.params.level.charAt(0).toUpperCase() + route.params.level.slice(1),
-    }),
-  },
+
+    {
+        path: '/:category/:level',
+        name: 'Workout',
+        component: Workout,
+        props: route => ({
+            category: route.params.category.charAt(0).toUpperCase() + route.params.category.slice(1),
+            level: route.params.level.charAt(0).toUpperCase() + route.params.level.slice(1),
+        }),
+    },
 ];
 
 const router = createRouter({
