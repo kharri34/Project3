@@ -1,113 +1,72 @@
 import { createRouter, createWebHistory } from 'vue-router';
+<<<<<<< HEAD
+import Home from '../components/Home.vue';
+import WorkoutLibrary from '../components/WorkoutLibrary.vue';
+import Core from "../components/categories/Core.vue";
+import Aerobics from "../components/categories/Aerobics.vue";
+import Arms from "../components/categories/Arms.vue";
+import Back from "../components/categories/Back.vue";
+import Chest from "../components/categories/Chest.vue";
+import Legs from "../components/categories/Legs.vue";
+import Shoulders from "../components/categories/Shoulders.vue";
+import Timer from '@/components/Timer.vue';
+//import exercise from '@/components/exercise.vue';
+
+const routes = [
+    { path: '/', name: 'Home', component: Home },
+    { path: '/workoutlibrary', name: 'WorkoutLibrary', component:WorkoutLibrary },
+    { path: "/core", name: "Core", component: Core },
+    { path: "/aerobics", name: "Aerobics", component: Aerobics },
+    { path: "/back", name: "Back", component: Back },
+    { path: "/arms", name: "Arms", component: Arms },
+    { path: "/chest", name: "Chest", component: Chest },
+    { path: "/legs", name: "Legs", component: Legs },
+    { path: "/shoulders", name: "Shoulders", component: Shoulders },
+    { path: '/', component: Home },  
+    { path: '/timer', component: Timer },  
+    
+
+      
+=======
 import Home from "../components/Home.vue";
 import WorkoutLibrary from "../components/WorkoutLibrary.vue";
 import Category from '../components/Category.vue';
-import Timer from '@/components/Timer.vue';
-
+import Timer from '../components/Timer.vue';
+import Workout from '../components/Workout.vue';
 
 const routes = [
-    { path: "/", name: "Home", component: Home},
-    { path: "/workoutlibrary", name: "WorkoutLibrary", component: WorkoutLibrary},
-    { path: "/timer", name: "Timer", component: Timer},
+    { path: "/", name: "Home", component: Home },
+    { path: "/workoutlibrary", name: "WorkoutLibrary", component: WorkoutLibrary },
+    { path: "/timer-app", name: "Timer", component: Timer },
+
     {
-        path: '/aerobics',
+        path: '/:category',
+        name: 'Category',
         component: Category,
-        props: {
-            category: 'Aerobics',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
+        props: route => {
+            const category = route.params.category.toLowerCase();
+            const workoutLinks = [
+                { id: 1, name: 'Beginner', path: `/${category}/beginner` },
+                { id: 2, name: 'Intermediate', path: `/${category}/intermediate` },
+                { id: 3, name: 'Advanced', path: `/${category}/advanced` },
+            ];
+            return {
+                category: category.charAt(0).toUpperCase() + category.slice(1), 
+                workouts: workoutLinks,
+            };
         },
     },
+
     {
-        path: '/arms',
-        component: Category,
-        props: {
-            category: 'Arms',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
+        path: '/:category/:level',
+        name: 'Workout',
+        component: Workout,
+        props: route => ({
+            category: route.params.category.charAt(0).toUpperCase() + route.params.category.slice(1),
+            level: route.params.level.charAt(0).toUpperCase() + route.params.level.slice(1),
+        }),
     },
-    {
-        path: '/back',
-        component: Category,
-        props: {
-            category: 'Back',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
-    },
-    {
-        path: '/chest',
-        component: Category,
-        props: {
-            category: 'Chest',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
-    },
-    {
-        path: '/core',
-        component: Category,
-        props: {
-            category: 'Core',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
-    },
-    {
-        path: '/legs',
-        component: Category,
-        props: {
-            category: 'Legs',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
-    },
-    {
-        path: '/shoulders',
-        component: Category,
-        props: {
-            category: 'Shoulders',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
-    },
-    {
-        path: '/stretches',
-        component: Category,
-        props: {
-            category: 'Stretches',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
-    },
-    {
-        path: '/fullbody',
-        component: Category,
-        props: {
-            category: 'FullBody',
-            workouts: [
-                {id: 1, name: 'Jumping Jacks', description: 'cardio'},
-                { id: 2, name: 'Mountain Climbers', description: 'Intense full-body cardio workout.' },
-            ],
-        },
-    },
+>>>>>>> 04a04c56d18a5dca4e206b27ff0202930dad8be8
 ];
 
 const router = createRouter({

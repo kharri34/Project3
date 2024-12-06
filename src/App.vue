@@ -1,4 +1,36 @@
 <template>
+<<<<<<< HEAD
+    <div id="app">
+      <nav>
+        <router-link to="/">Home</router-link>
+        <router-link to="/timer">Timer</router-link> 
+        <router-link to="/workoutlibrary">Workout Library</router-link>
+        <router-link to="/exerices">Premade Workout</router-link>
+      </nav>
+      <div>
+        <router-view /> <!-- This is where the components will show up based on the route -->
+      </div>
+    </div>
+  </template>
+  
+  <script>
+  import Home from './components/Home.vue';
+  import Timer from './components/Timer.vue';
+  
+  export default {
+    name: 'App',
+    components: {
+      Home,
+      Timer,
+    },
+  };
+  </script>
+  
+  <style>
+  /* Add your styles here */
+  </style>
+  
+=======
     <div :class="pageClass" id="app">
         <nav :class="navClass">
                 <router-link to="/" class="box bar">Home</router-link>
@@ -68,6 +100,7 @@ nav a:hover {
     background-image: url('@/assets/green.jpg');
     background-size: cover;
     background-position: center;
+    --link-gradient: linear-gradient(0.25turn, #f3d098, #b6915d, #a77e4a);
 }
 
 .background-workout {
@@ -75,10 +108,12 @@ nav a:hover {
     background-image: url('@/assets/green2.jpg');
     background-size: cover;
     background-position: center;
+    --link-gradient: linear-gradient(0.25turn, #ffd054, #fce1a4, #b28031, #895724, #6e3c1b);
 }
 
 .background-category {
     --color-background: var(--vt-c-category-background);
+    --link-gradient: linear-gradient(0.25turn, #ffffff, #c0c0c0, #808080, #606060, #505050);
 }
 
 .background-default {
@@ -142,6 +177,7 @@ nav a:hover {
 .box.bar:hover::after {
   -webkit-transform: scale(1);
   border-color: transparent;
-  border-image: linear-gradient(0.25turn, #ffd054,#fce1a4, #b28031, #895724, #6e3c1b) 1;
+  border-image: var(--link-gradient) 1;
 }
 </style>
+>>>>>>> 04a04c56d18a5dca4e206b27ff0202930dad8be8

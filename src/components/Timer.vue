@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
   <div class="timer-container">
     <h2 class="timer-title">{{ title }}</h2>
@@ -261,3 +262,5 @@ decrementSeconds() {
 }
 
 </style>
+=======
+>>>>>>> 625d0453eab63f70ff39e50838b553aeb00835d2
