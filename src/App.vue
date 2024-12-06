@@ -1,31 +1,31 @@
 <template>
     <div id="app">
-        <nav>
-            <router-link to="/">Home</router-link>
-            <router-link to="/workoutlibrary">Workout Library</router-link>
-        </nav>
-        <router-view></router-view>
+      <nav>
+        <router-link to="/">Home</router-link>
+        <router-link to="/timer">Timer</router-link> 
+        <router-link to="/workoutlibrary">Workout Library</router-link>
+        <router-link to="/exerices">Premade Workout</router-link>
+      </nav>
+      <div>
+        <router-view /> <!-- This is where the components will show up based on the route -->
+      </div>
     </div>
-</template>
-
-<style scoped>
-nav {
-    padding: 10px;
-    display: flex;
-    gap: 15px;
-    justify-content: left;
-    border-bottom: 1px solid #ddd;
-}
-
-nav a {
-    text-decoration: none;
-    color: grey;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-    color: goldenrod;
-    background-color: white;
-}
-</style>
+  </template>
+  
+  <script>
+  import Home from './components/Home.vue';
+  import Timer from './components/Timer.vue';
+  
+  export default {
+    name: 'App',
+    components: {
+      Home,
+      Timer,
+    },
+  };
+  </script>
+  
+  <style>
+  /* Add your styles here */
+  </style>
+  

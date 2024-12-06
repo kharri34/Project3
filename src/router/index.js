@@ -8,6 +8,8 @@ import Back from "../components/categories/Back.vue";
 import Chest from "../components/categories/Chest.vue";
 import Legs from "../components/categories/Legs.vue";
 import Shoulders from "../components/categories/Shoulders.vue";
+import Timer from '@/components/Timer.vue';
+//import exercise from '@/components/exercise.vue';
 
 const routes = [
     { path: '/', name: 'Home', component: Home },
@@ -19,6 +21,11 @@ const routes = [
     { path: "/chest", name: "Chest", component: Chest },
     { path: "/legs", name: "Legs", component: Legs },
     { path: "/shoulders", name: "Shoulders", component: Shoulders },
+    { path: '/', component: Home },  
+    { path: '/timer', component: Timer },  
+    
+
+      
 ];
 
 const router = createRouter({
