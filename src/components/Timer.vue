@@ -2,9 +2,7 @@
 <template>
   <div class="timer-container">
     <h2 class="timer-title">{{ title }}</h2>
-    <div class="timer-display">
-      <span>{{ formatTime(remainingTime) }}</span>
-    </div>
+    <div class="timer-display"><span>{{ formatTime(remainingTime) }}</span></div>
     <div class="timer-settings">
       <label for="custom-time">Set Time (seconds):</label>
       <input
@@ -14,19 +12,17 @@
         :disabled="isRunning"
         placeholder="Enter time in Minutes"
       />
-      <div class="time-control">
+      <div class="timer-control">
         <button @click="incrementSeconds" :disabled="isRunning" class="btn-control">+</button>
         <span>{{ userSeconds }}</span>
         <button @click="decrementSeconds" :disabled="isRunning" class="btn-control">-</button>
       </div>
-      <button @click="setCustomTime" :disabled="isRunning || !customTime" class="btn btn-set">
-        Set Time
-      </button>
+      <button @click="setCustomTime" :disabled="isRunning || !customTime" class="btn btn-set">Set Time</button>
     </div>
     <div class="timer-actions">
-      <button @click="startTimer" :disabled="isRunning" class="btn btn-start">Start</button>
-      <button @click="pauseTimer" :disabled="!isRunning" class="btn btn-pause">Pause</button>
-      <button @click="resetTimer" class="btn btn-reset">Reset</button>
+      <button @click="startTimer" :disabled="isRunning" class="btn btn-start">Start <div class="btn_horizontal"></div><div class="btn_vertical"></div></button>
+      <button @click="pauseTimer" :disabled="!isRunning" class="btn btn-pause">Pause <div class="btn_horizontal"></div><div class="btn_vertical"></div></button>
+      <button @click="resetTimer" class="btn btn-reset">Reset <div class="btn_horizontal"></div><div class="btn_vertical"></div></button>
     </div>
   </div>
 </template>
@@ -108,12 +104,12 @@ decrementSeconds() {
   },
 },
 };
-
 </script>
+
 <style scoped>
 .timer-container {
-  max-width: 300px;
-  margin: 0 auto;
+  position: relative;
+  height: 90%;
   text-align: center;
   font-family: 'Arial', sans-serif;
   background: linear-gradient(135deg, #f7f8fa, #e2e6ed);
@@ -121,7 +117,8 @@ decrementSeconds() {
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid #ddd;
-  margin-top: 150px;
+  margin: 20px;
+  overflow: hidden;
 }
 
 .timer-title {
@@ -143,88 +140,154 @@ decrementSeconds() {
 }
 
 .timer-settings {
-  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .timer-settings label {
-  display: block;
   font-size: 1rem;
   font-weight: bold;
-  margin-bottom: 5px;
 }
 
 .timer-settings input {
   width: 100%;
+  max-width: 200px;
   padding: 5px;
   font-size: 1rem;
-  margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #ddd;
+  text-align: center;
+}
+
+.timer-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .timer-actions {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  margin-top: 20px;
+
 }
 
 .btn {
-  flex: 1;
+  --offset: 10px;
+  --border-size: 2px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: block;
+  position: relative;
   padding: 10px 15px;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
+  background: transparent;
+  color: var(--animation-color);
   text-transform: uppercase;
+  letter-spacing: 0.25em;
+  outline: none;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+  box-shadow: inset 0 0 0 var(--border-size) var(--border-color);
+  transition: background 0.8s ease;
+}
+
+.btn:hover {
+  background: rgba(100, 0, 0, 0.03);
+}
+
+.btn_horizontal, .btn_vertical {
+  position: absolute;
+  top: var(--horizontal-offset, 0);
+  right: var(--vertical-offset, 0);
+  bottom: var(--horizontal-offset, 0);
+  left: var(--vertical-offset, 0);
+  transition: transform 0.8s ease;
+  will-change: transform;
+}
+
+.btn_horizontal::before, .btn_vertical::before {
+  content: "";
+  position: absolute;
+  border: inherit;
+}
+
+.btn_horizontal {
+  --vertical-offset: calc(var(--offset) * -1);
+  border-top: var(--border-size) solid var(--border-color);
+  border-bottom: var(--border-size) solid var(--border-color);
+}
+
+.btn_horizontal::before {
+  top: calc(var(--vertical-offset) - var(--border-size));
+  bottom: calc(var(--vertical-offset) - var(--border-size));
+  left: calc(var(--vertical-offset) * -1);
+  right: calc(var(--vertical-offset) * -1);
+}
+
+.btn:hover .btn_horizontal {
+  transform: scaleX(0);
+}
+
+.btn_vertical {
+  --horizontal-offset: calc(var(--offset) * -1);
+  border-left: var(--border-size) solid var(--border-color);
+  border-right: var(--border-size) solid var(--border-color);
+}
+
+.btn_vertical::before {
+  top: calc(var(--horizontal-offset) * -1);
+  bottom: calc(var(--horizontal-offset) * -1);
+  left: calc(var(--horizontal-offset) - var(--border-size));
+  right: calc(var(--horizontal-offset) - var(--border-size));
+}
+
+.btn:hover .btn_vertical {
+  transform: scaleY(0);
 }
 
 .btn-start {
-  background-color: #28a745;
-  color: white;
+  --animation-color: #165a26;
+  --border-color: #28a745;
   border: none;
-}
-
-.btn-start:hover {
-  background-color: #218838;
+  font-size: 3rem;
+  margin-top: 4rem;
 }
 
 .btn-pause {
-  background-color: #ffc107;
-  color: white;
+  --animation-color: #664e04;
+  --border-color: #ffc107; 
   border: none;
-}
-
-.btn-pause:hover {
-  background-color: #e0a800;
+  font-size: 3rem;
+  margin-top: 4rem;
 }
 
 .btn-reset {
-  background-color: #dc3545;
-  color: white;
+  --animation-color: #61171e;
+  --border-color: #dc3545;
   border: none;
-}
-
-.btn-reset:hover {
-  background-color: #c82333;
+  font-size: 3rem;
+  margin-top: 4rem;
 }
 
 .btn-set {
-  background-color: #17a2b8;
-  color: white;
+  --animation-color: #17a2b8;
   border: none;
-}
-
-.btn-set:hover {
-  background-color: #9af1ff;
+  margin-top: 20px;
 }
 
 .btn:disabled {
+  --animation-color: #666;
+  --border-color: transparent;
   background-color: #ccc;
-  color: #666;
+  border: none;
   cursor: not-allowed;
-  
 }
+
 .btn-control {
   background-color: rgb(180, 165, 197); /* Blue background */
   color: white; /* White text */
@@ -240,29 +303,5 @@ decrementSeconds() {
 .btn-control:hover {
   background-color: aliceblue; /* Darker blue on hover */
 }
-
-.btn-control:disabled {
-  background-color: #ccc; /* Grey background when disabled */
-  color: #666; /* Dimmed text color when disabled */
-  cursor: not-allowed; /* Indicates the button is disabled */
-}
-
-.btn-set {
-  background-color: #17a2b8;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
-}
-
-.btn-set:hover {
-  background-color: #138496;
-}
-
 </style>
 
