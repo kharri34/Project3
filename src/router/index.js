@@ -8,8 +8,7 @@ import Workout from '../components/Workout.vue';
 const routes = [
     { path: "/", name: "Home", component: Home },
     { path: "/workoutlibrary", name: "WorkoutLibrary", component: WorkoutLibrary },
-    { path: "/timer-app", name: "Timer", component: Timer },
-
+    { path: "/timer", name: "Timer", component: Timer },
     {
         path: '/:category',
         name: 'Category',
