@@ -1,37 +1,36 @@
 @import './base.css';
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-  background-color: black;
+  background-color: var(--color-background);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color:var(--color-text);
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+.background-category{
+  --color-background:var(--vt-c-category-background);
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.background-default {
+  --color-background:var(--vt-c-default-background);
+}
+
+
+li {
+  color: white;
 }
 
 @media (min-width: 1024px) {
   body {
-    background-color:darkolivegreen;
     display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
   }
 }

@@ -1,102 +1,89 @@
 <template>
-    <div class = "workoutlibrary">
-        <h1 class="shadow-text">Workout Library</h1>
-        <div class="categories">
-            <router-link to="/aerobics" class="category-card">Aerobic Workouts</router-link>
-            <router-link to="/arms" class="category-card">Arm Workouts</router-link>
-            <router-link to="/back" class="category-card">Back Workouts</router-link>
-            <router-link to="/Chest" class="category-card">Chest Workouts</router-link>
-            <router-link to="/core" class="category-card">Core Workouts</router-link>
-            <router-link to="/legs" class="category-card">Leg Workouts</router-link>
-            <router-link to="/shoulders" class="category-card">Shoulder Workouts</router-link>
-        </div>
+  <div class="workoutlibrary">
+    <h1 class="shadow-text underline">Workout Library</h1>
+    <div id="grid">
+      <router-link id="item1" to="/aerobics"><SvgButton text="Aerobic Workouts" gradientId="gradient1"/></router-link>
+      <router-link id="item2" to="/chest"><SvgButton text="Chest Workouts" gradientId="gradient1"/></router-link>
+      <router-link id="item3" to="/legs"><SvgButton text="Leg Workouts" gradientId="gradient1"/></router-link>
+      <router-link id="item4" to="/arms"><SvgButton text="Arm Workouts" gradientId="gradient1"/></router-link>
+      <router-link id="item5" to="/core"><SvgButton text="Core Workouts" gradientId="gradient1"/></router-link>
+      <router-link id="item6" to="/shoulders"><SvgButton text="Shoulder Workouts" gradientId="gradient1"/></router-link>
+      <router-link id="item7" to="/back"><SvgButton text="Back Workouts" gradientId="gradient1"/></router-link>
+      <router-link id="item8" to="/fullbody"><SvgButton text="Full-Body Workouts" gradientId="gradient1"/></router-link>
+      <router-link id="item9" to="/stretches"><SvgButton text="Stretches" gradientId="gradient1"/></router-link>
     </div>
+  </div>
 </template>
 
-<script>
-export default {};
-</script>
+
+  
+  <script>
+  import SvgButton from "@/components/SvgButton.vue";
+  export default {
+    components: {
+        SvgButton,
+    },
+  };
+  </script>
 
 <style scoped>
 .workoutlibrary {
-    background-color:black;
-    text-align: center;
-    color: silver;
-    font-weight: bold;
-    height: 100vh;
-    padding:20px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 h1 {
-    position: relative;
-    margin: 0;
-    padding: 10px;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    border-bottom: 2px solid transparent;
-    border-image: linear-gradient(0.25turn, rgb(228, 213, 171), rgb(233, 210, 147), rgb(237, 204, 113), rgb(238, 192, 64), rgb(240, 179, 11));
-    border-image-slice: 1;
+  padding: 10px;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.shadow-text { 
+.underline::after {
+  content:'';
+  height:2px;
+  width:93%;
+  background:linear-gradient(0.25turn, #fdd87d,#fce1a4, #b28031, #895724, #6e3c1b);;
+  position:absolute;
+  right:6%;
+  bottom:0;
+}
+
+.shadow-text {
+  position: relative;
+  left: 170px;
   color: #fff;
   text-shadow: 
-    1px 1px 0 #000, 
-    2px 2px 0 #333, 
-    3px 3px 0 #666, 
-    4px 4px 0 #999; 
+    1px 1px 0 #6e3c1b, 
+    2px 2px 0 #895724, 
+    3px 3px 0 #b28031, 
+    4px 4px 0 #ffd054; 
 }
 
-.categories {
-    display: flex;
-    flex-direction: column; 
-    gap: 20px; 
-    justify-content: center;
-    padding: 10px;
-    background-color: black;
-    border-radius: 10px;
-    height: calc(100vh - 80px);
-    overflow: hidden; 
+#grid {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 22px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  margin-top: 10px;
+  grid-column-gap: 50px;
+  grid-row-gap: 0px;
+  margin-right: 5px;
 }
 
-.category-card {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 120px;
-    text-decoration: none;
-    font-size: 1.0rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8),
-                 -2px -2px 4px rgba(0, 0, 0, 0.8);
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 10px;
-    box-shadow: inset -3px -3px 5px rgba(255, 255, 255, 0.3),
-                inset 3px 3px 5px rgba(0, 0, 0, 0.4),
-                3px 3px 8px rgba(0, 0, 0, 0.6);
-    background: linear-gradient(145deg, #d4af37, #ffd700, #b8860b); /* Metallic gold gradient */
-    transition: transform 0.3s, box-shadow 0.3s;
- 
-}
-
-.category-card:hover {
-    transform: translateY(-5px);
-    box-shadow: inset -4px -4px 6px rgba(255, 255, 255, 0.4),
-                inset 4px 4px 6px rgba(0, 0, 0, 0.5),
-                4px 6px 12px rgba(255, 223, 0, 0.7);
-}
-
-.category-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 70%);
-    border-radius: 10px;
-    pointer-events: none;
-}
+#item1 { grid-area: 1 / 3 / 2 / 4; }
+#item2 { grid-area: 3 / 3 / 4 / 4; }
+#item3 { grid-area: 5 / 3 / 6 / 4; }
+#item4 { grid-area: 2 / 4 / 3 / 5; }
+#item5 { grid-area: 4 / 4 / 5 / 5; }
+#item6 { grid-area: 6 / 4 / 7 / 5; }
+#item7 { grid-area: 3 / 5 / 4 / 6; }
+#item8 { grid-area: 5 / 5 / 6 / 6; }
+#item9 { grid-area: 7 / 5 / 8 / 6; }
 </style>
+
+  
+    
