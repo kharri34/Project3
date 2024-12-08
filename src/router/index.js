@@ -6,13 +6,13 @@ import Category from '../components/Category.vue';
 import Workout from '../components/Workout.vue';
 
 // Category-specific components
-// import Core from '../components/categories/Core.vue';
-// import Aerobics from '../components/categories/Aerobics.vue';
-// import Arms from '../components/categories/Arms.vue';
-// import Back from '../components/categories/Back.vue';
-// import Chest from '../components/categories/Chest.vue';
-// import Legs from '../components/categories/Legs.vue';
-// import Shoulders from '../components/categories/Shoulders.vue';
+import Core from '../components/categories/Core.vue';
+import Aerobics from '../components/categories/Aerobics.vue';
+import Arms from '../components/categories/Arms.vue';
+import Back from '../components/categories/Back.vue';
+import Chest from '../components/categories/Chest.vue';
+import Legs from '../components/categories/Legs.vue';
+import Shoulders from '../components/categories/Shoulders.vue';
 
 const routes = [
     { path: "/", name: "Home", component: Home },
