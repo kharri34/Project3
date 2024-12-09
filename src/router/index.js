@@ -5,7 +5,6 @@ import Timer from '../components/Timer.vue';
 import Category from '../components/Category.vue';
 import Workout from '../components/Workout.vue';
 
-// Category-specific components
 import Core from '../components/categories/Core.vue';
 import Aerobics from '../components/categories/Aerobics.vue';
 import Arms from '../components/categories/Arms.vue';
