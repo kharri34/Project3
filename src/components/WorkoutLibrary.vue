@@ -2,7 +2,12 @@
   <div class="workoutlibrary">
     <h1 class="shadow-text underline">Workout Library</h1>
     <div id="grid">
-      <router-link id="item1" to="/aerobics"><SvgButton text="Aerobic Workouts" gradientId="gradient1"/></router-link>
+      <router-link id="item1" to="/aerobics">
+        <SvgButton text="Aerobic Workouts" gradientId="gradient1"/>
+      </router-link>
+
+
+      <!--<router-link id="item1" to="/aerobics"><SvgButton text="Aerobic Workouts" gradientId="gradient1"/></router-link> -->
       <router-link id="item2" to="/chest"><SvgButton text="Chest Workouts" gradientId="gradient1"/></router-link>
       <router-link id="item3" to="/legs"><SvgButton text="Leg Workouts" gradientId="gradient1"/></router-link>
       <router-link id="item4" to="/arms"><SvgButton text="Arm Workouts" gradientId="gradient1"/></router-link>

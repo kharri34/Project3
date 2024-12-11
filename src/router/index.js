@@ -4,19 +4,35 @@ import WorkoutLibrary from '../components/WorkoutLibrary.vue';
 import Timer from '../components/Timer.vue';
 import Category from '../components/Category.vue';
 import Workout from '../components/Workout.vue';
-
-import Core from '../components/categories/Core.vue';
-import Aerobics from '../components/categories/Aerobics.vue';
-import Arms from '../components/categories/Arms.vue';
-import Back from '../components/categories/Back.vue';
-import Chest from '../components/categories/Chest.vue';
-import Legs from '../components/categories/Legs.vue';
-import Shoulders from '../components/categories/Shoulders.vue';
+import Aerobic from '@/components/Aerobic.vue';
+import Chest from '@/components/Chest.vue';
+import Legs from '@/components/Legs.vue';
+import Arms from '@/components/Arms.vue';
+import Core from '@/components/Core.vue';
+import Shoulders from '@/components/Shoulders.vue';
+import Back from '@/components/Back.vue';
+import Fullbody from '@/components/Fullbody.vue';
+import Stretches from '@/components/Stretches.vue';
+import Levels from '@/components/Levels.vue';
+import Predmade from '@/components/Predmade.vue';
 
 const routes = [
     { path: "/", name: "Home", component: Home },
     { path: "/workoutlibrary", name: "WorkoutLibrary", component: WorkoutLibrary },
     { path: "/timer", name: "Timer", component: Timer },
+    { path: "/aerobics", name: "Aerobics", component: Aerobic },
+    { path: "/chest", name: "Chests", component: Chest },
+    { path: "/legs", name: "Legs", component: Legs },
+    { path: "/arms", name: "Arms", component: Arms },
+    { path: "/core", name: "Core", component: Core },
+    { path: "/shoulders", name: "Shoulders", component: Shoulders },
+    { path: "/back", name: "Back", component: Back },
+    { path: "/fullbody", name: "Fullbody", component: Fullbody },
+    { path: "/stretches", name: "Stretches", component: Stretches },
+    { path: "/levels", name: "Levels", component: Levels },
+    { path: "/premade", name: "Premade", component: Predmade },
+
+
     {
         path: '/:category',
         name: 'Category',
@@ -44,6 +60,15 @@ const routes = [
             level: route.params.level.charAt(0).toUpperCase() + route.params.level.slice(1),
         }),
     },
+
+    {
+        path: "/aerobics",
+        name: "AerobicBeginner",
+        component: Aerobic,
+        props: true
+    },
+  
+      
 ];
 
 const router = createRouter({
