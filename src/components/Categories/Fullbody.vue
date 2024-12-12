@@ -1,6 +1,9 @@
 <template>
-    <div class="aerobics">
-      <h1 class="page-title">Fullbody Workouts</h1>
+    <div class="fullbody">
+      <section class="page-title-wrapper">
+      <div class="page-title-top">Full Body</div>
+      <div class="page-title-bottom" aria-hidden="true">Full Body</div>
+    </section>
   
       <!-- Beginner Category -->
       <section class="category">
@@ -60,79 +63,99 @@
   
   <script>
   export default {
-    name: 'Aerobics',
+    name: 'Fullbody',
   };
   </script>
   
   <style scoped>
-  .aerobics {
-    padding: 20px;
-    background-color: #f5f5f5;
-  }
-  
-  .page-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 40px;
-  }
-  
-  .category {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-    padding: 20px;
-  }
-  
-  .category-title {
-    font-size: 2rem;
-    color: #333;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-  
-  .workout {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px;
-  }
-  
-  .workout-image img {
-    max-width: 100%;
-    border-radius: 10px;
-  }
-  
-  .workout-details {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .workout-name {
-    font-size: 1.5rem;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  .workout-description {
-    font-size: 1rem;
-    color: #777;
-    margin-bottom: 20px;
-  }
-  
-  .start-workout-btn {
-    padding: 10px 20px;
-    background-color: #6e3c1b;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    transition: background-color 0.3s;
-  }
-  
-  .start-workout-btn:hover {
-    background-color: #895724;
-  }
-  </style>
-  
+.fullbody {
+  padding: 20px;
+  background-color: black;
+}
+
+.page-title-wrapper {
+  position: relative;
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: "Oswald", sans-serif;
+  height: 5rem;
+}
+
+.page-title-top,
+.page-title-bottom {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  font-size: clamp(1rem, 1rem + 8vw, 5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+}
+
+.page-title-top {
+  clip-path: polygon(-20% 100%, 100% 0%, 0% 0%, 0% 100%);
+  z-index: 2;
+}
+
+.page-title-bottom {
+  clip-path: polygon(-15% 100%, 100% 5%, 100% 100%, 0% 100%);
+  color: transparent;
+  background: linear-gradient(176deg, black 47%, hsl(0, 0%, 100%) 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transform: translateX(-0.02em);
+  z-index: 1;
+}
+
+
+
+/* Existing styles */
+.category {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.category-title {
+  font-size: 2rem;
+  font-family: 'Oswald', sans-serif;
+  color:black;
+  font-weight:800;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.workout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.workout-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.workout-details {
+  display: flex;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  flex-direction: column;
+}
+
+.workout-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.workout-description {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+</style>
