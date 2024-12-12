@@ -1,7 +1,10 @@
 
 <template>
   <div class="timer-container">
-    <h2 class="timer-title">{{ title }}</h2>
+    <section class="wrapper">
+      <h2 class="timer-title-top">{{ title }}</h2>
+      <h2 class="timer-title-bottom" aria-hidden="true">{{ title }}</h2>
+    </section>
     <div class="timer-display"><span>{{ formatTime(remainingTime) }}</span></div>
     <div class="timer-settings">
       <label for="custom-time">Set Time (seconds):</label>
@@ -53,7 +56,7 @@ export default {
       }
     },
     // Sets the custom time when the "Set Time" button is clicked
-    incrementSeconds() {
+  incrementSeconds() {
   this.remainingTime += 60; // Add 60 seconds (1 minute)
   this.userSeconds = this.remainingTime; // Sync userSeconds
 },
@@ -107,12 +110,55 @@ decrementSeconds() {
 </script>
 
 <style scoped>
+.wrapper{
+  position: relative;
+  height: auto;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 50px;
+}
+
+
+.wrapper > h2 {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.timer-title-top {
+  clip-path: polygon(-20% 100%, 100% 0%, 0% 0%, 0% 100%);
+  z-index: 2;
+}
+
+.timer.title-bottom 
+.timer.title-top{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  font-size: clamp(1rem, 1rem + 8vw, 5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+}
+
+.timer-title-bottom {
+  clip-path: polygon(-15% 100%, 100% 5%, 100% 100%, 0% 100%);
+  color: transparent;
+  background: linear-gradient(176deg, black 47%, hsl(0, 0%, 100%) 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transform: translateX(-0.02em);
+  z-index: 1;
+}
+
 .timer-container {
   position: relative;
   height: 90%;
   text-align: center;
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #f7f8fa, #e2e6ed);
+  font-family: 'Oswald', sans-serif;
+  background: black;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -126,13 +172,14 @@ decrementSeconds() {
   font-weight: bold;
   color: #333;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .timer-display {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #007bff;
-  background: #f7f8fa;
+  color: white;
+  background:#171717;
   border-radius: 8px;
   padding: 10px;
   margin-bottom: 15px;
@@ -160,18 +207,19 @@ decrementSeconds() {
   border-radius: 5px;
   border: 1px solid #ddd;
   text-align: center;
+  justify-content: center;
 }
 
 .timer-control {
   display: flex;
-  align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
 .timer-actions {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: center;
+  gap: 200px;
   margin-top: 20px;
 
 }
@@ -254,7 +302,7 @@ decrementSeconds() {
   --animation-color: #165a26;
   --border-color: #28a745;
   border: none;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-top: 4rem;
 }
 
@@ -262,15 +310,15 @@ decrementSeconds() {
   --animation-color: #664e04;
   --border-color: #ffc107; 
   border: none;
-  font-size: 3rem;
   margin-top: 4rem;
+  font-size: 2.5rem;
 }
 
 .btn-reset {
   --animation-color: #61171e;
   --border-color: #dc3545;
   border: none;
-  font-size: 3rem;
+  font-size:2.5rem;
   margin-top: 4rem;
 }
 
@@ -278,30 +326,41 @@ decrementSeconds() {
   --animation-color: #17a2b8;
   border: none;
   margin-top: 20px;
+  justify-content: center;
 }
 
 .btn:disabled {
   --animation-color: #666;
   --border-color: transparent;
-  background-color: #ccc;
+  background-color: transparent;
   border: none;
   cursor: not-allowed;
 }
 
 .btn-control {
-  background-color: rgb(180, 165, 197); /* Blue background */
-  color: white; /* White text */
-  border: none; /* Remove default borders */
-  border-radius: 50%; /* Makes the button circular */
-  padding: 10px 15px; /* Adds size to the button */
-  font-size: 1.2rem; /* Increases the text size */
-  cursor: pointer; /* Changes cursor to pointer */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effects */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3 ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn-control:hover {
   background-color: aliceblue; /* Darker blue on hover */
+}
+
+.btn-control:disabled {
+  cursor: not-allowed;
+  background-color: #f0f0f0;
+  color: #aaa;
 }
 </style>
 

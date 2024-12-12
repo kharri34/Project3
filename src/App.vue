@@ -4,7 +4,6 @@
         <router-link to="/" class="box bar">Home</router-link>
         <router-link to="/timer" class="box bar">Timer</router-link>
         <router-link to="/workoutlibrary" class="box bar">Workout Library</router-link>
-        <router-link to="/exercises" class="box bar">Premade Workout</router-link>
       </nav>
       <div style="flex: 1; display: flex; flex-direction: column;">
         <router-view />
@@ -18,12 +17,15 @@
       pageClass() {
         if (this.$route.path === "/") return "background-home";
         if (this.$route.path === "/workoutlibrary") return "background-workout";
+        if(this.$route.path === "/timer") return "background-timer";
         if (this.isCategory) return "background-category";
         return "background-default";
       },
       navClass() {
         if (this.isCategory) return "nav-category";
+        if (this.$route.path === "/timer") return "nav-category";
         if (this.$route.path === "/") return "nav-home";
+
         return "nav-default";
       },
       isCategory() {
@@ -92,6 +94,11 @@
     --link-gradient: linear-gradient(0.25turn, #ffffff, #c0c0c0, #808080, #606060, #505050);
   }
   
+  .background-timer {
+    --color-background: var(--vt-c-category-backgroound);
+    --link-gradient: linear-gradient(0.25turn, #ffffff, #c0c0c0, #808080, #606060, #505050);
+  }
+
   .background-default {
     --color-background: var(--vt-c-default-background);
   }

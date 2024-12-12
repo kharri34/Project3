@@ -14,7 +14,6 @@ import Back from '@/components/Back.vue';
 import Fullbody from '@/components/Fullbody.vue';
 import Stretches from '@/components/Stretches.vue';
 import Levels from '@/components/Levels.vue';
-import Predmade from '@/components/Predmade.vue';
 
 const routes = [
     { path: "/", name: "Home", component: Home },
@@ -30,7 +29,6 @@ const routes = [
     { path: "/fullbody", name: "Fullbody", component: Fullbody },
     { path: "/stretches", name: "Stretches", component: Stretches },
     { path: "/levels", name: "Levels", component: Levels },
-    { path: "/premade", name: "Premade", component: Predmade },
 
 
     {
