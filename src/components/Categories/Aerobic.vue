@@ -1,6 +1,5 @@
 <template>
   <div class="aerobics">
-    <!-- Page title with slice effect -->
     <section class="page-title-wrapper">
       <div class="page-title-top">Aerobics</div>
       <div class="page-title-bottom" aria-hidden="true">Aerobics</div>
@@ -11,7 +10,7 @@
       <h2 class="category-title">Beginner</h2>
       <div class="workout">
         <div class="workout-image">
-          <img src="@/assets/m.gif" alt="Beginner Workout" />
+          <img src="@/assets/Exercise Images/Aerobic Images/m.gif" alt="Beginner Workout" />
         </div>
         <div class="workout-details">
           <h3 class="workout-name">Marching</h3>
@@ -27,7 +26,7 @@
       <h2 class="category-title">Intermediate</h2>
       <div class="workout">
         <div class="workout-image">
-          <img src="@/assets/jj.gif" alt="Intermediate Workout" />
+          <img src="@/assets/Exercise Images/Aerobic Images/jj.gif" alt="Intermediate Workout" />
         </div>
         <div class="workout-details">
           <h3 class="workout-name">Jumping Jacks</h3>
@@ -43,7 +42,7 @@
       <h2 class="category-title">Advanced</h2>
       <div class="workout">
         <div class="workout-image">
-          <img src="@/assets/b.gif" alt="Advanced Workout" />
+          <img src="@/assets/Exercise Images/Aerobic Images/b.gif" alt="Advanced Workout" />
         </div>
         <div class="workout-details">
           <h3 class="workout-name">Burpees</h3>
@@ -104,9 +103,6 @@ export default {
   z-index: 1;
 }
 
-
-
-/* Existing styles */
 .category {
   background-color: white;
   border-radius: 10px;
@@ -118,8 +114,8 @@ export default {
 .category-title {
   font-size: 2rem;
   font-family: 'Oswald', sans-serif;
-  color:black;
-  font-weight:800;
+  color: black;
+  font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -154,6 +150,3 @@ export default {
   margin-bottom: 20px;
 }
 </style>
-
-
-  

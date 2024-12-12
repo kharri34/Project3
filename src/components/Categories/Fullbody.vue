@@ -1,73 +1,69 @@
 <template>
-    <div class="fullbody">
-      <section class="page-title-wrapper">
+  <div class="fullbody">
+    <section class="page-title-wrapper">
       <div class="page-title-top">Full Body</div>
       <div class="page-title-bottom" aria-hidden="true">Full Body</div>
     </section>
-  
-      <!-- Beginner Category -->
-      <section class="category">
-        <h2 class="category-title">Beginner</h2>
-        <div class="workout">
-          <div class="workout-image">
-           <img src="@/assets/gb.gif" alt="Beginner Workout" />
-          </div>
-          <div class="workout-details">
-            <h3 class="workout-name">Glute Bridges</h3>
-            <p class="workout-description">
-              Lie on your back, feet flat on the floor, and lift your hips toward the ceiling. This works the glutes, hamstrings, and core.
-            </p>
-            <!-- Add a link or button to start the workout -->
-            <!-- <router-link to="/aerobics/beginner" class="start-workout-btn">Start Beginner Workout</router-link> -->
-          </div>
+
+    <!-- Beginner Category -->
+    <section class="category">
+      <h2 class="category-title">Beginner</h2>
+      <div class="workout">
+        <div class="workout-image">
+          <img src="@/assets/Exercise Images/Fullbody Images/gb.gif" alt="Beginner Workout" />
         </div>
-      </section>
-  
-      <!-- Intermediate Category -->
-      <section class="category">
-        <h2 class="category-title">Intermediate</h2>
-        <div class="workout">
-          <div class="workout-image">
-            <img src="@/assets/mc.gif" alt="Intermediate Workout" />
-          </div>
-          <div class="workout-details">
-            <h3 class="workout-name">Mountain Climbers</h3>
-            <p class="workout-description">
-              A cardio-based full-body exercise that engages the core, shoulders, and legs while improving endurance.
-            </p>
-            <!-- Add a link or button to start the workout -->
-            <!-- <router-link to="/aerobics/intermediate" class="start-workout-btn">Start Intermediate Workout</router-link> -->
-          </div>
+        <div class="workout-details">
+          <h3 class="workout-name">Glute Bridges</h3>
+          <p class="workout-description">
+            Lie on your back, feet flat on the floor, and lift your hips toward the ceiling. This works the glutes,
+            hamstrings, and core.
+          </p>
         </div>
-      </section>
-  
-      <!-- Advanced Category -->
-      <section class="category">
-        <h2 class="category-title">Advanced</h2>
-        <div class="workout">
-          <div class="workout-image">
-            <img src="@/assets/t.gif" alt="Advanced Workout" />
-          </div>
-          <div class="workout-details">
-            <h3 class="workout-name">Thrusters</h3>
-            <p class="workout-description">
-              A combination of a squat and an overhead press (with dumbbells or a barbell) that works the entire body, focusing on the legs, shoulders, and core.
-            </p>
-            <!-- Add a link or button to start the workout -->
-            <!--<router-link to="/aerobics/advanced" class="start-workout-btn">Start Advanced Workout</router-link> -->
-          </div>
+      </div>
+    </section>
+
+    <!-- Intermediate Category -->
+    <section class="category">
+      <h2 class="category-title">Intermediate</h2>
+      <div class="workout">
+        <div class="workout-image">
+          <img src="@/assets/Exercise Images/Fullbody Images/mc.gif" alt="Intermediate Workout" />
         </div>
-      </section>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'Fullbody',
-  };
-  </script>
-  
-  <style scoped>
+        <div class="workout-details">
+          <h3 class="workout-name">Mountain Climbers</h3>
+          <p class="workout-description">
+            A cardio-based full-body exercise that engages the core, shoulders, and legs while improving endurance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advanced Category -->
+    <section class="category">
+      <h2 class="category-title">Advanced</h2>
+      <div class="workout">
+        <div class="workout-image">
+          <img src="@/assets/Exercise Images/Fullbody Images/t.gif" alt="Advanced Workout" />
+        </div>
+        <div class="workout-details">
+          <h3 class="workout-name">Thrusters</h3>
+          <p class="workout-description">
+            A combination of a squat and an overhead press (with dumbbells or a barbell) that works the entire body,
+            focusing on the legs, shoulders, and core.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Fullbody',
+};
+</script>
+
+<style scoped>
 .fullbody {
   padding: 20px;
   background-color: black;
@@ -109,9 +105,6 @@
   z-index: 1;
 }
 
-
-
-/* Existing styles */
 .category {
   background-color: white;
   border-radius: 10px;
@@ -123,8 +116,8 @@
 .category-title {
   font-size: 2rem;
   font-family: 'Oswald', sans-serif;
-  color:black;
-  font-weight:800;
+  color: black;
+  font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 20px;
 }

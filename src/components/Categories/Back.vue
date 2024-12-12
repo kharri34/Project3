@@ -1,79 +1,74 @@
 <template>
-    <div class="back">
-      <section class="page-title-wrapper">
+  <div class="back">
+    <section class="page-title-wrapper">
       <div class="page-title-top">Back</div>
       <div class="page-title-bottom" aria-hidden="true">Back</div>
-      </section>
-  
-      <!-- Beginner Category -->
-      <section class="category">
-        <h2 class="category-title">Beginner</h2>
-        <div class="workout">
-          <div class="workout-image">
-           <img src="@/assets/s.gif" alt="Beginner Workout" />
-          </div>
-          <div class="workout-details">
-            <h3 class="workout-name">Superman Exercise</h3>
-            <p class="workout-description">
-              Lie on your stomach and lift your arms and legs off the ground to engage your lower back muscles.
-            </p>
-            <!-- Add a link or button to start the workout -->
-            <!-- <router-link to="/aerobics/beginner" class="start-workout-btn">Start Beginner Workout</router-link> -->
-          </div>
+    </section>
+
+    <!-- Beginner Category -->
+    <section class="category">
+      <h2 class="category-title">Beginner</h2>
+      <div class="workout">
+        <div class="workout-image">
+          <img src="@/assets/Exercise Images/Back Images/s.gif" alt="Beginner Workout" />
         </div>
-      </section>
-  
-      <!-- Intermediate Category -->
-      <section class="category">
-        <h2 class="category-title">Intermediate</h2>
-        <div class="workout">
-          <div class="workout-image">
-            <img src="@/assets/dbor.gif" alt="Intermediate Workout" />
-          </div>
-          <div class="workout-details">
-            <h3 class="workout-name">Bent-Over Dumbbell Rows</h3>
-            <p class="workout-description">
-              Hold a dumbbell in each hand and pull them towards your waist, working the lats and mid-back.
-            </p>
-            <!-- Add a link or button to start the workout -->
-            <!-- <router-link to="/aerobics/intermediate" class="start-workout-btn">Start Intermediate Workout</router-link> -->
-          </div>
+        <div class="workout-details">
+          <h3 class="workout-name">Superman Exercise</h3>
+          <p class="workout-description">
+            Lie on your stomach and lift your arms and legs off the ground to engage your lower back muscles.
+          </p>
         </div>
-      </section>
-  
-      <!-- Advanced Category -->
-      <section class="category">
-        <h2 class="category-title">Advanced</h2>
-        <div class="workout">
-          <div class="workout-image">
-            <img src="@/assets/pullup.gif" alt="Advanced Workout" />
-          </div>
-          <div class="workout-details">
-            <h3 class="workout-name">Pull-Ups</h3>
-            <p class="workout-description">
-              Using a pull-up bar, this bodyweight exercise targets the upper back, lats, and biceps, requiring significant strength.
-            </p>
-            <!-- Add a link or button to start the workout -->
-            <!--<router-link to="/aerobics/advanced" class="start-workout-btn">Start Advanced Workout</router-link> -->
-          </div>
+      </div>
+    </section>
+
+    <!-- Intermediate Category -->
+    <section class="category">
+      <h2 class="category-title">Intermediate</h2>
+      <div class="workout">
+        <div class="workout-image">
+          <img src="@/assets/Exercise Images/Back Images/dbor.gif" alt="Intermediate Workout" />
         </div>
-      </section>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'Back',
-  };
-  </script>
-  
-  <style scoped>
-  .back {
-    padding: 20px;
-    background-color: black;
-  }
-  
-  .page-title-wrapper {
+        <div class="workout-details">
+          <h3 class="workout-name">Bent-Over Dumbbell Rows</h3>
+          <p class="workout-description">
+            Hold a dumbbell in each hand and pull them towards your waist, working the lats and mid-back.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advanced Category -->
+    <section class="category">
+      <h2 class="category-title">Advanced</h2>
+      <div class="workout">
+        <div class="workout-image">
+          <img src="@/assets/Exercise Images/Back Images/pullup.gif" alt="Advanced Workout" />
+        </div>
+        <div class="workout-details">
+          <h3 class="workout-name">Pull-Ups</h3>
+          <p class="workout-description">
+            Using a pull-up bar, this bodyweight exercise targets the upper back, lats, and biceps, requiring
+            significant strength.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Back',
+};
+</script>
+
+<style scoped>
+.back {
+  padding: 20px;
+  background-color: black;
+}
+
+.page-title-wrapper {
   position: relative;
   text-align: center;
   margin-bottom: 50px;
@@ -102,7 +97,7 @@
   text-align: center;
 }
 
-  .page-title-top {
+.page-title-top {
   clip-path: polygon(-20% 100%, 100% 0%, 0% 0%, 0% 100%);
   z-index: 2;
 }
@@ -128,8 +123,8 @@
 .category-title {
   font-size: 2rem;
   font-family: 'Oswald', sans-serif;
-  color:black;
-  font-weight:800;
+  color: black;
+  font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -163,5 +158,4 @@
   color: #777;
   margin-bottom: 20px;
 }
-  </style>
-  
+</style>

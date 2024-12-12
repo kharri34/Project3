@@ -5,7 +5,6 @@
 </template>
 
 <style scoped>
-
 .home {
   display: flex;
   flex-direction: column;
@@ -29,13 +28,13 @@ h1 {
   border-image-slice: 1;
 }
 
-.shadow-text { 
+.shadow-text {
   color: #fff;
-  text-shadow: 
-    1px 1px 0 #000, 
-    2px 2px 0 #a77e4a, 
-    3px 3px 0 #b6915d, 
-    4px 4px 0 #f3d098; 
+  text-shadow:
+    1px 1px 0 #000,
+    2px 2px 0 #a77e4a,
+    3px 3px 0 #b6915d,
+    4px 4px 0 #f3d098;
 }
 
 @media (max-width: 768px) {

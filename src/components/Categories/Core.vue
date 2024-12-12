@@ -1,16 +1,16 @@
 <template>
-    <div class="core">
-      <section class="page-title-wrapper">
+  <div class="core">
+    <section class="page-title-wrapper">
       <div class="page-title-top">Core</div>
       <div class="page-title-bottom" aria-hidden="true">Core</div>
     </section>
-  
-      <!-- Beginner Category -->
+
+    <!-- Beginner Category -->
     <section class="category">
       <h2 class="category-title">Beginner</h2>
       <div class="workout">
         <div class="workout-image">
-          <img src="@/assets/su.gif" alt="Beginner Workout" />
+          <img src="@/assets/Exercise Images/Core Images/su.gif" alt="Beginner Workout" />
         </div>
         <div class="workout-details">
           <h3 class="workout-name">Sit-Ups</h3>
@@ -20,13 +20,13 @@
         </div>
       </div>
     </section>
-  
-      <!-- Intermediate Category -->
+
+    <!-- Intermediate Category -->
     <section class="category">
       <h2 class="category-title">Intermediate</h2>
       <div class="workout">
         <div class="workout-image">
-          <img src="@/assets/p.gif" alt="Intermediate Workout" />
+          <img src="@/assets/Exercise Images/Core Images/p.gif" alt="Intermediate Workout" />
         </div>
         <div class="workout-details">
           <h3 class="workout-name">Plank</h3>
@@ -36,13 +36,13 @@
         </div>
       </div>
     </section>
-  
-      <!-- Advanced Category -->
+
+    <!-- Advanced Category -->
     <section class="category">
       <h2 class="category-title">Advanced</h2>
       <div class="workout">
         <div class="workout-image">
-          <img src="@/assets/awr.gif" alt="Advanced Workout" />
+          <img src="@/assets/Exercise Images/Core Images/awr.gif" alt="Advanced Workout" />
         </div>
         <div class="workout-details">
           <h3 class="workout-name">Ab Wheel Rollouts</h3>
@@ -54,14 +54,14 @@
     </section>
   </div>
 </template>
-  
-  <script>
-  export default {
-    name: 'Core',
-  };
-  </script>
-  
-  <style scoped>
+
+<script>
+export default {
+  name: 'Core',
+};
+</script>
+
+<style scoped>
 .core {
   padding: 20px;
   background-color: black;
@@ -103,9 +103,6 @@
   z-index: 1;
 }
 
-
-
-/* Existing styles */
 .category {
   background-color: white;
   border-radius: 10px;
@@ -117,8 +114,8 @@
 .category-title {
   font-size: 2rem;
   font-family: 'Oswald', sans-serif;
-  color:black;
-  font-weight:800;
+  color: black;
+  font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -153,6 +150,3 @@
   margin-bottom: 20px;
 }
 </style>
-
-
-  

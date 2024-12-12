@@ -1,4 +1,3 @@
-
 <template>
   <div class="timer-container">
     <section class="wrapper">
@@ -8,13 +7,8 @@
     <div class="timer-display"><span>{{ formatTime(remainingTime) }}</span></div>
     <div class="timer-settings">
       <label for="custom-time">Set Time (seconds):</label>
-      <input
-        id="custom-time"
-        type="number"
-        v-model.number="customTime"
-        :disabled="isRunning"
-        placeholder="Enter time in Minutes"
-      />
+      <input id="custom-time" type="number" v-model.number="customTime" :disabled="isRunning"
+        placeholder="Enter time in Minutes" />
       <div class="timer-control">
         <button @click="incrementSeconds" :disabled="isRunning" class="btn-control">+</button>
         <span>{{ userSeconds }}</span>
@@ -23,9 +17,15 @@
       <button @click="setCustomTime" :disabled="isRunning || !customTime" class="btn btn-set">Set Time</button>
     </div>
     <div class="timer-actions">
-      <button @click="startTimer" :disabled="isRunning" class="btn btn-start">Start <div class="btn_horizontal"></div><div class="btn_vertical"></div></button>
-      <button @click="pauseTimer" :disabled="!isRunning" class="btn btn-pause">Pause <div class="btn_horizontal"></div><div class="btn_vertical"></div></button>
-      <button @click="resetTimer" class="btn btn-reset">Reset <div class="btn_horizontal"></div><div class="btn_vertical"></div></button>
+      <button @click="startTimer" :disabled="isRunning" class="btn btn-start">Start <div class="btn_horizontal"></div>
+        <div class="btn_vertical"></div>
+      </button>
+      <button @click="pauseTimer" :disabled="!isRunning" class="btn btn-pause">Pause <div class="btn_horizontal"></div>
+        <div class="btn_vertical"></div>
+      </button>
+      <button @click="resetTimer" class="btn btn-reset">Reset <div class="btn_horizontal"></div>
+        <div class="btn_vertical"></div>
+      </button>
     </div>
   </div>
 </template>
@@ -56,28 +56,28 @@ export default {
       }
     },
     // Sets the custom time when the "Set Time" button is clicked
-  incrementSeconds() {
-  this.remainingTime += 60; // Add 60 seconds (1 minute)
-  this.userSeconds = this.remainingTime; // Sync userSeconds
-},
-
-decrementSeconds() {
-  if (this.remainingTime > 0) { // Prevent going below 1 minute
-    this.remainingTime -= 60; // Subtract 60 seconds (1 minute)
-    this.userSeconds = this.remainingTime; // Sync userSeconds
-  }
-},
     incrementSeconds() {
-  this.remainingTime += 1; // Add 60 seconds (1 minute)
-  this.userSeconds = this.remainingTime; // Sync userSeconds
-},
+      this.remainingTime += 60; // Add 60 seconds (1 minute)
+      this.userSeconds = this.remainingTime; // Sync userSeconds
+    },
 
-decrementSeconds() {
-  if (this.remainingTime > 0) { // Prevent going below 1 minute
-    this.remainingTime -= 1; // Subtract 60 seconds (1 minute)
-    this.userSeconds = this.remainingTime; // Sync userSeconds
-  }
-},
+    decrementSeconds() {
+      if (this.remainingTime > 0) { // Prevent going below 1 minute
+        this.remainingTime -= 60; // Subtract 60 seconds (1 minute)
+        this.userSeconds = this.remainingTime; // Sync userSeconds
+      }
+    },
+    incrementSeconds() {
+      this.remainingTime += 1; // Add 60 seconds (1 minute)
+      this.userSeconds = this.remainingTime; // Sync userSeconds
+    },
+
+    decrementSeconds() {
+      if (this.remainingTime > 0) { // Prevent going below 1 minute
+        this.remainingTime -= 1; // Subtract 60 seconds (1 minute)
+        this.userSeconds = this.remainingTime; // Sync userSeconds
+      }
+    },
 
     // Starts the timer
     startTimer() {
@@ -99,18 +99,18 @@ decrementSeconds() {
     },
     // Resets the timer to the last custom or default time
     resetTimer() {
-    this.isRunning = false;
-    clearInterval(this.timer);
-    // Reset to custom time (if set) or default of 1 minute (60 seconds)
-    this.remainingTime = (this.customTime || 1) * 60; 
-    this.userSeconds = this.remainingTime; // Sync userSeconds with remainingTime
+      this.isRunning = false;
+      clearInterval(this.timer);
+      // Reset to custom time (if set) or default of 1 minute (60 seconds)
+      this.remainingTime = (this.customTime || 1) * 60;
+      this.userSeconds = this.remainingTime; // Sync userSeconds with remainingTime
+    },
   },
-},
 };
 </script>
 
 <style scoped>
-.wrapper{
+.wrapper {
   position: relative;
   text-align: center;
   font-family: "Oswald", sans-serif;
@@ -119,7 +119,7 @@ decrementSeconds() {
 }
 
 .timer-title-top,
-.timer-title-bottom{
+.timer-title-bottom {
   position: absolute;
   width: 100%;
   left: 0;
@@ -162,7 +162,7 @@ decrementSeconds() {
   font-size: 2.5rem;
   font-weight: bold;
   color: white;
-  background:#171717;
+  background: #171717;
   border-radius: 8px;
   padding: 10px;
   margin-bottom: 15px;
@@ -174,7 +174,7 @@ decrementSeconds() {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  
+
 }
 
 .timer-settings label {
@@ -203,7 +203,7 @@ decrementSeconds() {
   display: flex;
   justify-content: center;
   gap: 200px;
-  margin:20px;
+  margin: 20px;
 
 }
 
@@ -211,8 +211,8 @@ decrementSeconds() {
   --offset: 10px;
   --border-size: 2px;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   display: block;
   position: relative;
   padding: 10px 15px;
@@ -231,7 +231,8 @@ decrementSeconds() {
   background: rgba(100, 0, 0, 0.03);
 }
 
-.btn_horizontal, .btn_vertical {
+.btn_horizontal,
+.btn_vertical {
   position: absolute;
   top: var(--horizontal-offset, 0);
   right: var(--vertical-offset, 0);
@@ -241,7 +242,8 @@ decrementSeconds() {
   will-change: transform;
 }
 
-.btn_horizontal::before, .btn_vertical::before {
+.btn_horizontal::before,
+.btn_vertical::before {
   content: "";
   position: absolute;
   border: inherit;
@@ -291,7 +293,7 @@ decrementSeconds() {
 
 .btn-pause {
   --animation-color: #664e04;
-  --border-color: #ffc107; 
+  --border-color: #ffc107;
   border: none;
   margin-top: 4rem;
   font-size: 2.5rem;
@@ -301,7 +303,7 @@ decrementSeconds() {
   --animation-color: #61171e;
   --border-color: #dc3545;
   border: none;
-  font-size:2.5rem;
+  font-size: 2.5rem;
   margin-top: 4rem;
 }
 
@@ -337,7 +339,8 @@ decrementSeconds() {
 }
 
 .btn-control:hover {
-  background-color: aliceblue; /* Darker blue on hover */
+  background-color: aliceblue;
+  /* Darker blue on hover */
 }
 
 .btn-control:disabled {
@@ -346,4 +349,3 @@ decrementSeconds() {
   color: #aaa;
 }
 </style>
-

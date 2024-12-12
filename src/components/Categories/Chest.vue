@@ -10,15 +10,13 @@
       <h2 class="category-title">Beginner</h2>
       <div class="workout">
         <div class="workout-image">
-         <img src="@/assets/kpu.gif" alt="Beginner Workout" />
+          <img src="@/assets/Exercise Images/Chest Images/kpu.gif" alt="Beginner Workout" />
         </div>
         <div class="workout-details">
           <h3 class="workout-name">Knee Push-Ups</h3>
           <p class="workout-description">
             A modified push-up with knees on the ground, reducing resistance.
           </p>
-          <!-- Add a link or button to start the workout -->
-          <!-- <router-link to="/aerobics/beginner" class="start-workout-btn">Start Beginner Workout</router-link> -->
         </div>
       </div>
     </section>
@@ -28,15 +26,13 @@
       <h2 class="category-title">Intermediate</h2>
       <div class="workout">
         <div class="workout-image">
-          <img src="@/assets/pu.gif" alt="Intermediate Workout" />
+          <img src="@/assets/Exercise Images/Chest Images/pu.gif" alt="Intermediate Workout" />
         </div>
         <div class="workout-details">
           <h3 class="workout-name">Standard Push-Up</h3>
           <p class="workout-description">
             Classic chest exercise using body weight to build strength.
           </p>
-          <!-- Add a link or button to start the workout -->
-          <!-- <router-link to="/aerobics/intermediate" class="start-workout-btn">Start Intermediate Workout</router-link> -->
         </div>
       </div>
     </section>
@@ -46,15 +42,13 @@
       <h2 class="category-title">Advanced</h2>
       <div class="workout">
         <div class="workout-image">
-          <img src="@/assets/apu.gif" alt="Advanced Workout" />
+          <img src="@/assets/Exercise Images/Chest Images/apu.gif" alt="Advanced Workout" />
         </div>
         <div class="workout-details">
           <h3 class="workout-name">Archer Push-Ups</h3>
           <p class="workout-description">
             One arm stays extended while the other bends, increasing load on one side.
           </p>
-          <!-- Add a link or button to start the workout -->
-          <!--<router-link to="/aerobics/advanced" class="start-workout-btn">Start Advanced Workout</router-link> -->
         </div>
       </div>
     </section>
@@ -109,9 +103,6 @@ export default {
   z-index: 1;
 }
 
-
-
-/* Existing styles */
 .category {
   background-color: white;
   border-radius: 10px;
@@ -123,8 +114,8 @@ export default {
 .category-title {
   font-size: 2rem;
   font-family: 'Oswald', sans-serif;
-  color:black;
-  font-weight:800;
+  color: black;
+  font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
