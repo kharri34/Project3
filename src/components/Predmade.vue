@@ -8,6 +8,7 @@
       </div>
   
       <!-- Loop through exercises and display them -->
+       <!-- hi-->
       <div v-for="(exercise, index) in exercises" :key="index" class="exercise-card">
         <h2 class="exercise-title">{{ exercise.name }}</h2>
         <img :src="exercise.image" alt="Image of {{ exercise.name }}" class="exercise-image"/>
