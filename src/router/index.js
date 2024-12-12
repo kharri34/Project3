@@ -4,15 +4,15 @@ import WorkoutLibrary from '../components/WorkoutLibrary.vue';
 import Timer from '../components/Timer.vue';
 import Category from '../components/Category.vue';
 import Workout from '../components/Workout.vue';
-import Aerobic from '@/components/Aerobic.vue';
-import Chest from '@/components/Chest.vue';
-import Legs from '@/components/Legs.vue';
-import Arms from '@/components/Arms.vue';
-import Core from '@/components/Core.vue';
-import Shoulders from '@/components/Shoulders.vue';
-import Back from '@/components/Back.vue';
-import Fullbody from '@/components/Fullbody.vue';
-import Stretches from '@/components/Stretches.vue';
+import Aerobic from '@/components/Categories/Aerobic.vue';
+import Chest from '@/components/Categories/Chest.vue';
+import Legs from '@/components/Categories/Legs.vue';
+import Arms from '@/components/Categories/Arms.vue';
+import Core from '@/components/Categories/Core.vue';
+import Shoulders from '@/components/Categories/Shoulders.vue';
+import Back from '@/components/Categories/Back.vue';
+import Fullbody from '@/components/Categories/Fullbody.vue';
+import Stretches from '@/components/Categories/Stretches.vue';
 import Levels from '@/components/Levels.vue';
 
 const routes = [

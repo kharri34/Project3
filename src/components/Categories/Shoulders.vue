@@ -1,6 +1,9 @@
 <template>
-    <div class="aerobics">
-      <h1 class="page-title">Shoulder Workouts</h1>
+    <div class="shoulders">
+      <section class="page-title-wrapper">
+      <div class="page-title-top">Shoulders</div>
+      <div class="page-title-bottom" aria-hidden="true">Shoulders</div>
+    </section>
   
       <!-- Beginner Category -->
       <section class="category">
@@ -14,8 +17,6 @@
             <p class="workout-description">
               Small or large circles with arms extended to warm up and activate shoulder muscles.
             </p>
-            <!-- Add a link or button to start the workout -->
-            <!-- <router-link to="/aerobics/beginner" class="start-workout-btn">Start Beginner Workout</router-link> -->
           </div>
         </div>
       </section>
@@ -32,8 +33,6 @@
             <p class="workout-description">
               Press dumbbells overhead to target the deltoids and upper arms.
             </p>
-            <!-- Add a link or button to start the workout -->
-            <!-- <router-link to="/aerobics/intermediate" class="start-workout-btn">Start Intermediate Workout</router-link> -->
           </div>
         </div>
       </section>
@@ -50,31 +49,58 @@
             <p class="workout-description">
               A variation of the dumbbell shoulder press that incorporates a rotation to fully engage the shoulders.
             </p>
-            <!-- Add a link or button to start the workout -->
-            <!--<router-link to="/aerobics/advanced" class="start-workout-btn">Start Advanced Workout</router-link> -->
           </div>
         </div>
       </section>
     </div>
   </template>
   
-  <script>
+<script>
   export default {
-    name: 'Aerobics',
+    name: 'Shoulders',
   };
-  </script>
+</script>
   
-  <style scoped>
-  .aerobics {
+<style scoped>
+  .shoulders {
     padding: 20px;
-    background-color: #f5f5f5;
+    background-color: black;
   }
   
-  .page-title {
+  .page-title-wrapper {
+    position: relative;
     text-align: center;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    font-family: "Oswald", sans-serif;
+    height: 5rem;
+  }
+  
+  .page-title-top,
+  .page-title-bottom {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    font-size: clamp(1rem, 1rem + 8vw, 5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+  }
+  
+  .page-title-top {
+    clip-path: polygon(-20% 100%, 100% 0%, 0% 0%, 0% 100%);
+    z-index: 2;
+  }
+  
+  .page-title-bottom {
+    clip-path: polygon(-15% 100%, 100% 5%, 100% 100%, 0% 100%);
+    color: transparent;
+    background: linear-gradient(176deg, black 47%, hsl(0, 0%, 100%) 60%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    transform: translateX(-0.02em);
+    z-index: 1;
   }
   
   .category {
@@ -86,8 +112,10 @@
   }
   
   .category-title {
-    font-size: 2rem;
-    color: #333;
+    font-size: 2.5rem;
+    font-family: 'Oswald', sans-serif;
+    color:black;
+    font-weight:800;
     text-transform: uppercase;
     margin-bottom: 20px;
   }
@@ -105,34 +133,23 @@
   
   .workout-details {
     display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     flex-direction: column;
   }
   
   .workout-name {
-    font-size: 1.5rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
     color: #555;
     margin-bottom: 10px;
   }
   
   .workout-description {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #777;
     margin-bottom: 20px;
   }
+</style>
   
-  .start-workout-btn {
-    padding: 10px 20px;
-    background-color: #6e3c1b;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    transition: background-color 0.3s;
-  }
   
-  .start-workout-btn:hover {
-    background-color: #895724;
-  }
-  </style>
-  
+    

@@ -1,18 +1,21 @@
 <template>
-    <div class="aerobics">
-      <h1 class="page-title">Leg Workouts</h1>
+    <div class="arms">
+      <section class="page-title-wrapper">
+      <div class="page-title-top">Arms</div>
+      <div class="page-title-bottom" aria-hidden="true">Arms</div>
+    </section>
   
       <!-- Beginner Category -->
       <section class="category">
         <h2 class="category-title">Beginner</h2>
         <div class="workout">
           <div class="workout-image">
-           <img src="@/assets/bws.gif" alt="Beginner Workout" />
+           <img src="@/assets/wpu.gif" alt="Beginner Workout" />
           </div>
           <div class="workout-details">
-            <h3 class="workout-name">Bodyweight Squats</h3>
+            <h3 class="workout-name">Wall Push-Ups</h3>
             <p class="workout-description">
-              Simple and effective for building leg strength and mobility.
+              Push-ups done against a wall, reducing resistance and making it easier on the arms.
             </p>
             <!-- Add a link or button to start the workout -->
             <!-- <router-link to="/aerobics/beginner" class="start-workout-btn">Start Beginner Workout</router-link> -->
@@ -25,12 +28,12 @@
         <h2 class="category-title">Intermediate</h2>
         <div class="workout">
           <div class="workout-image">
-            <img src="@/assets/wl.gif" alt="Intermediate Workout" />
+            <img src="@/assets/td.gif" alt="Intermediate Workout" />
           </div>
           <div class="workout-details">
-            <h3 class="workout-name">Walking Lunges</h3>
+            <h3 class="workout-name">Tricep Dips</h3>
             <p class="workout-description">
-              Adds balance and coordination while working quads, hamstrings, and glutes.
+              Use a chair or bench to target the triceps with body weight.
             </p>
             <!-- Add a link or button to start the workout -->
             <!-- <router-link to="/aerobics/intermediate" class="start-workout-btn">Start Intermediate Workout</router-link> -->
@@ -43,12 +46,12 @@
         <h2 class="category-title">Advanced</h2>
         <div class="workout">
           <div class="workout-image">
-            <img src="@/assets/js.gif" alt="Advanced Workout" />
+            <img src="@/assets/dpu.gif" alt="Advanced Workout" />
           </div>
           <div class="workout-details">
-            <h3 class="workout-name">Jump Squats</h3>
+            <h3 class="workout-name">Diamond Push-Ups</h3>
             <p class="workout-description">
-              Explosive movement to build power and increase heart rate.
+              Hands form a diamond shape under the chest, placing extra strain on the triceps and inner chest.
             </p>
             <!-- Add a link or button to start the workout -->
             <!--<router-link to="/aerobics/advanced" class="start-workout-btn">Start Advanced Workout</router-link> -->
@@ -60,23 +63,55 @@
   
   <script>
   export default {
-    name: 'Aerobics',
+    name: 'Arms',
   };
   </script>
-  
-  <style scoped>
-  .aerobics {
+
+<style scoped>
+  .arms {
     padding: 20px;
-    background-color: #f5f5f5;
+    background-color: black;
   }
   
-  .page-title {
+  .page-title-wrapper {
+    position: relative;
     text-align: center;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    font-family: "Oswald", sans-serif;
+    height: 5rem;
   }
   
+  .page-title-top,
+  .page-title-bottom {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    font-size: clamp(1rem, 1rem + 8vw, 5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+  }
+  
+  .page-title-top {
+    clip-path: polygon(-20% 100%, 100% 0%, 0% 0%, 0% 100%);
+    z-index: 2;
+  }
+  
+  .page-title-bottom {
+    clip-path: polygon(-15% 100%, 100% 5%, 100% 100%, 0% 100%);
+    color: transparent;
+    background: linear-gradient(176deg, black 47%, hsl(0, 0%, 100%) 60%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    transform: translateX(-0.02em);
+    z-index: 1;
+  }
+  
+  
+  
+  /* Existing styles */
   .category {
     background-color: white;
     border-radius: 10px;
@@ -87,7 +122,9 @@
   
   .category-title {
     font-size: 2rem;
-    color: #333;
+    font-family: 'Oswald', sans-serif;
+    color:black;
+    font-weight:800;
     text-transform: uppercase;
     margin-bottom: 20px;
   }
@@ -105,10 +142,12 @@
   
   .workout-details {
     display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     flex-direction: column;
   }
   
   .workout-name {
+    font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
     color: #555;
     margin-bottom: 10px;
@@ -119,20 +158,7 @@
     color: #777;
     margin-bottom: 20px;
   }
-  
-  .start-workout-btn {
-    padding: 10px 20px;
-    background-color: #6e3c1b;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    transition: background-color 0.3s;
-  }
-  
-  .start-workout-btn:hover {
-    background-color: #895724;
-  }
   </style>
   
+  
+    

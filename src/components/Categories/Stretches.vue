@@ -1,6 +1,9 @@
 <template>
-    <div class="aerobics">
-      <h1 class="page-title">Stretches</h1>
+    <div class="stretches">
+      <section class="page-title-wrapper">
+      <div class="page-title-top">Stretches</div>
+      <div class="page-title-bottom" aria-hidden="true">Stretches</div>
+    </section>
   
       <!-- Beginner Category -->
       <section class="category">
@@ -14,8 +17,6 @@
             <p class="workout-description">
               Start on all fours, arch your back upward (Cat), then lower it and lift your head and tailbone (Cow). This stretches the spine, shoulders, and neck.
             </p>
-            <!-- Add a link or button to start the workout -->
-            <!-- <router-link to="/aerobics/beginner" class="start-workout-btn">Start Beginner Workout</router-link> -->
           </div>
         </div>
       </section>
@@ -32,8 +33,6 @@
             <p class="workout-description">
               Start in a plank position, then push your hips up and back, forming an upside-down V shape. This stretches the hamstrings, calves, and shoulders.
             </p>
-            <!-- Add a link or button to start the workout -->
-            <!-- <router-link to="/aerobics/intermediate" class="start-workout-btn">Start Intermediate Workout</router-link> -->
           </div>
         </div>
       </section>
@@ -41,98 +40,113 @@
       <!-- Advanced Category -->
       <section class="category">
         <h2 class="category-title">Advanced</h2>
-        <div class="workout">
-          <div class="workout-image">
-            <img src="@/assets/pp.gif" alt="Advanced Workout" />
-          </div>
-          <div class="workout-details">
-            <h3 class="workout-name">Pidgeon Pose</h3>
-            <p class="workout-description">
-              From a tabletop position, bring one knee forward and extend the other leg behind you. This deep stretch targets the hips, glutes, and lower back.
-            </p>
-            <!-- Add a link or button to start the workout -->
-            <!--<router-link to="/aerobics/advanced" class="start-workout-btn">Start Advanced Workout</router-link> -->
-          </div>
+      <div class="workout">
+        <div class="workout-image">
+          <img src="@/assets/pp.gif" alt="Advanced Workout" />
         </div>
-      </section>
-    </div>
-  </template>
+        <div class="workout-details">
+          <h3 class="workout-name">Pidgeon Pose</h3>
+          <p class="workout-description">
+            From a tabletop position, bring one knee forward and extend the other leg behind you. This deep stretch targets the hips, glutes, and lower back.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
   
-  <script>
+<script>
   export default {
-    name: 'Aerobics',
+    name: 'Stretches',
   };
-  </script>
+</script>
   
-  <style scoped>
-  .aerobics {
+<style scoped>
+  .stretches {
     padding: 20px;
-    background-color: #f5f5f5;
+    background-color: black;
   }
-  
-  .page-title {
+
+  .page-title-wrapper {
+    position: relative;
     text-align: center;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    font-family: "Oswald", sans-serif;
+    height: 5rem;
   }
-  
+
+  .page-title-top,
+  .page-title-bottom {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    font-size: clamp(1rem, 1rem + 8vw, 5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+  }
+
+  .page-title-top {
+    clip-path: polygon(-20% 100%, 100% 0%, 0% 0%, 0% 100%);
+    z-index: 2;
+  }
+
+  .page-title-bottom {
+    clip-path: polygon(-15% 100%, 100% 5%, 100% 100%, 0% 100%);
+    color: transparent;
+    background: linear-gradient(176deg, black 47%, hsl(0, 0%, 100%) 60%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    transform: translateX(-0.02em);
+    z-index: 1;
+  }
+
   .category {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
     padding: 20px;
-  }
-  
+  } 
+
   .category-title {
     font-size: 2rem;
-    color: #333;
+    font-family: 'Oswald', sans-serif;
+    color:black;
+    font-weight:800;
     text-transform: uppercase;
     margin-bottom: 20px;
   }
-  
+
   .workout {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
   }
-  
+
   .workout-image img {
     max-width: 100%;
     border-radius: 10px;
   }
-  
+
   .workout-details {
     display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     flex-direction: column;
   }
-  
+
   .workout-name {
+    font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
     color: #555;
     margin-bottom: 10px;
   }
-  
+
   .workout-description {
     font-size: 1rem;
     color: #777;
     margin-bottom: 20px;
   }
-  
-  .start-workout-btn {
-    padding: 10px 20px;
-    background-color: #6e3c1b;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    transition: background-color 0.3s;
-  }
-  
-  .start-workout-btn:hover {
-    background-color: #895724;
-  }
-  </style>
-  
+</style>
