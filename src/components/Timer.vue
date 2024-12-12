@@ -2,8 +2,8 @@
 <template>
   <div class="timer-container">
     <section class="wrapper">
-      <h2 class="timer-title-top">{{ title }}</h2>
-      <h2 class="timer-title-bottom" aria-hidden="true">{{ title }}</h2>
+      <div class="timer-title-top">{{ title }}</div>
+      <div class="timer-title-bottom" aria-hidden="true">{{ title }}</div>
     </section>
     <div class="timer-display"><span>{{ formatTime(remainingTime) }}</span></div>
     <div class="timer-settings">
@@ -112,35 +112,29 @@ decrementSeconds() {
 <style scoped>
 .wrapper{
   position: relative;
-  height: auto;
   text-align: center;
   font-family: "Oswald", sans-serif;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
+  height: auto;
 }
 
-
-.wrapper > h2 {
-  position: relative;
+.timer-title-top,
+.timer-title-bottom{
+  position: absolute;
   width: 100%;
+  left: 0;
+  top: 0;
+  font-size: clamp(0.5rem, 0.5rem + 4vw, 2.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 100%);
   text-align: center;
+
 }
 
 .timer-title-top {
   clip-path: polygon(-20% 100%, 100% 0%, 0% 0%, 0% 100%);
   z-index: 2;
-}
-
-.timer.title-bottom 
-.timer.title-top{
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  font-size: clamp(1rem, 1rem + 8vw, 5rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  color: hsl(0, 0%, 100%);
-  text-align: center;
 }
 
 .timer-title-bottom {
@@ -154,8 +148,6 @@ decrementSeconds() {
 }
 
 .timer-container {
-  position: relative;
-  height: 90%;
   text-align: center;
   font-family: 'Oswald', sans-serif;
   background: black;
@@ -164,15 +156,6 @@ decrementSeconds() {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid #ddd;
   margin: 20px;
-  overflow: hidden;
-}
-
-.timer-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
-  text-align: center;
 }
 
 .timer-display {
@@ -191,7 +174,7 @@ decrementSeconds() {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
+  
 }
 
 .timer-settings label {
@@ -220,7 +203,7 @@ decrementSeconds() {
   display: flex;
   justify-content: center;
   gap: 200px;
-  margin-top: 20px;
+  margin:20px;
 
 }
 
