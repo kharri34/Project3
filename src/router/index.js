@@ -30,7 +30,6 @@ const routes = [
     { path: "/stretches", name: "Stretches", component: Stretches },
     { path: "/levels", name: "Levels", component: Levels },
 
-  // Dynamic route for category
   {
     path: '/:category',
     name: 'Category',
@@ -64,7 +63,12 @@ const routes = [
     },
   },
 
-  
+  {
+    path: "/aerobics",
+    name: "AerobicBeginner",
+    component: Aerobic,
+    props: true
+  },
  
 ];
 
