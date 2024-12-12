@@ -11,12 +11,12 @@
       <h2 class="category-title">Beginner</h2>
       <div class="workout">
         <div class="workout-image">
-          <img src="@/assets/ccs.gif" alt="Beginner Workout" />
+          <img src="@/assets/m.gif" alt="Beginner Workout" />
         </div>
         <div class="workout-details">
-          <h3 class="workout-name">Cat-Cow Stretch</h3>
+          <h3 class="workout-name">Marching</h3>
           <p class="workout-description">
-            Start on all fours, arch your back upward (Cat), then lower it and lift your head and tailbone (Cow). This stretches the spine, shoulders, and neck.
+            Simple, low-impact movement to get your heart rate up.
           </p>
         </div>
       </div>
@@ -27,12 +27,12 @@
       <h2 class="category-title">Intermediate</h2>
       <div class="workout">
         <div class="workout-image">
-          <img src="@/assets/dd.jpg" alt="Intermediate Workout" />
+          <img src="@/assets/jj.gif" alt="Intermediate Workout" />
         </div>
         <div class="workout-details">
-          <h3 class="workout-name">Downward Dog</h3>
+          <h3 class="workout-name">Jumping Jacks</h3>
           <p class="workout-description">
-            Start in a plank position, then push your hips up and back, forming an upside-down V shape. This stretches the hamstrings, calves, and shoulders.
+            A step up from marching, engaging more muscles and increasing intensity.
           </p>
         </div>
       </div>
@@ -43,12 +43,12 @@
       <h2 class="category-title">Advanced</h2>
       <div class="workout">
         <div class="workout-image">
-          <img src="@/assets/pp.gif" alt="Advanced Workout" />
+          <img src="@/assets/b.gif" alt="Advanced Workout" />
         </div>
         <div class="workout-details">
-          <h3 class="workout-name">Pigeon Pose</h3>
+          <h3 class="workout-name">Burpees</h3>
           <p class="workout-description">
-            From a tabletop position, bring one knee forward and extend the other leg behind you. This deep stretch targets the hips, glutes, and lower back.
+            Full body, high-intensity movement that combines cardio and strength.
           </p>
         </div>
       </div>

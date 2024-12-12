@@ -73,7 +73,7 @@ decrementSeconds() {
 },
 
 decrementSeconds() {
-  if (this.remainingTime > 60) { // Prevent going below 1 minute
+  if (this.remainingTime > 0) { // Prevent going below 1 minute
     this.remainingTime -= 1; // Subtract 60 seconds (1 minute)
     this.userSeconds = this.remainingTime; // Sync userSeconds
   }
